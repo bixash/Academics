@@ -1,0 +1,184 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+   
+}
+body {
+    font-family: sans-serif;
+    font-size: 13px;
+
+}
+.header-bar, footer {
+    background-color: #ff7300;
+    height: 30px;
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color:#f2f2f2;
+    padding: 1em 4em;
+    align-items: center;
+
+    margin-bottom: 1em;
+
+}
+
+
+.logo-container { 
+    width: 250px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+
+.date-container p {
+    text-align: center;
+    padding: 0.1em;
+    border-bottom: 1.5px solid grey;
+    /* text-decoration: underline; */
+}
+
+h1, h2 {
+    font-size: 16px;
+    color: grey;
+}
+
+.logo {
+    background-color: grey;
+    width: 80px;
+    height: 80px;
+
+
+    /* padding:em 1em; */
+    border-radius: 50%;
+}
+
+.payterm {
+    text-align: right;
+    margin:  1em 2em;
+    color: grey;
+  
+}
+
+.pay-info {
+    margin: 0 2em;
+    display: grid;
+    grid-template-columns: repeat(2, 45%);
+    gap: 5%;
+    
+}
+
+.tohead {
+    border-bottom: 1.5px solid grey;
+    color: grey;
+    /* paddingem; */
+    margin-bottom: 0.4em;
+    /* font-weight: bold; */
+}
+
+ul li {
+    list-style-type: none;
+    padding: 0.1em 0;
+}
+
+table {
+    /* border: 1px solid grey; */
+   
+    border-collapse: collapse;
+    margin: 2em auto;
+    width: 90%;
+    
+    
+}
+td, th  {
+    border-left: 1px solid gray;
+    border-right: 1px solid gray;
+
+ 
+
+}
+th {
+    background-color: #ff7300;
+    color: white;
+    font-size: 12px;;
+    padding: 1em;
+  
+}
+tr,td,th{
+    padding: 0.3em 0.5em;
+    
+}
+.table-cols:nth-child(1) {
+    /* background-color:red; */
+    width: 40%;
+}
+.table-cols:nth-child(2) {
+    /* background-color:red; */
+    width: 10%;
+}
+.table-cols:nth-child(3) {
+    /* background-color:red; */
+    width: 25%;
+}
+.table-cols:nth-child(4) {
+    /* background-color:red; */
+    width: 15%;
+}
+.table-row:nth-child(odd) {
+    background-color: #f2f2f2;
+
+}
+.table-row:nth-child(8) {
+    border-bottom: 1.5px solid grey;
+}
+
+.remarks {
+    position: relative;
+}
+span {
+    position: absolute;
+    margin: 1em;
+    top: 0;
+    /* background-color: blue; */
+    
+    
+}
+.subtotal td {
+    border: none;
+    /* font-size: 10px; */
+}
+
+.subtotal .subnum {
+    border-bottom: 1px solid grey;
+    /* color: red; */
+}
+.balance-due {
+    border-top: 2px solid grey;
+    /* background-color: #ff7300; */
+}
+.balance-due td:nth-child(2) {
+    background-color: #ff7300;
+    border: none;
+    /* color: white; */
+}
+
+
+@media (min-width: 700px) {
+    header {
+        padding: 1em 5em;
+    }
+
+    .payterm {
+        
+        margin: 0 5em;
+      
+    }
+    .pay-info {
+        margin: 0 5em;
+        
+    }
+}
