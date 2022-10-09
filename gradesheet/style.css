@@ -1,0 +1,26 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+body{
+    font-family: sans-serif;
+    
+}
+h1 {
+    width: fit-content;
+    margin: 1em auto;
+}
+
+table {
+    margin: 1em auto;
+}
+.sheet,.sheet tr,.sheet th,.sheet td {
+    border-collapse: collapse;
+    border: 1px solid black;
+    text-align: center;
+    padding: 5px;
+}
+
