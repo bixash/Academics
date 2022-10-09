@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+    /* font-size: 1px; */
+    /* font-weight: bold; */
+}
+form {
+    margin: 2em;
+}
+legend {
+    text-align: center;
+}
+
+h1 {
+
+    color: rgb(0, 128, 255);
+    font-size: 32px;
+    font-weight: 400;
+    width: fit-content;
+        margin: 1em auto;
+}
+
+label {
+    display: inline-block;
+    width: 80px;
+}
+
+div {
+    border: 1.5px solid #bcbcbc;
+    border-radius: 1px;
+    width: 90%;
+    /* background-color: #6677; */
+    padding: 0.4em 1em;;
+    margin: 1em auto;
+
+}
+
+input[type="text"], input[type="phone"],select[type="text"], textarea {
+    padding: 0.2em;
+    width: 250px;
+}
+
+input[type="radio"]{
+   
+    margin: 0.3em;
+}
+
+textarea {
+    margin-top: 0.5em;
+}
+
+
+.btn{
+    background-color: blue;
+    color: white;
+    padding: 0.5em;
+    /* border-radius: 0.5em; */
+    border: none;
+}
+.reset {
+    background-color: red;
+}
+
+
+@media (min-width: 750px) {
+
+    form {
+        width: 750px;
+        margin: 2em auto;
+    }
+
+    h1 {
+        width: fit-content;
+        margin: 1em auto;
+    }
+    input[type="text"], input[type="phone"],select[type="text"], textarea {
+        width: 80%;
+    }
+}

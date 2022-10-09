@@ -5,32 +5,36 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Form</title>
-    <link rel="stylesheet" href="forms.css">
+    <title>PSC Form</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
-        <h1>Registration Form</h1>
+        <h1>Public Service Commission</h1>
     </header>
     
 
     <form >
-        <fieldset>
-            <legend>Personal details</legend>
+       
+            
             
             <div>
-                <label for="">Name</label>
-                <input type="text" placeholder="" class="name" label ="Name" >
+                <label for="">First Name</label>
+                <input type="text" placeholder="" class="firstname" label ="Name" >
+            </div>
+            <div>
+                <label for="">Last Name</label>
+                <input type="text" placeholder="" class="lastname" label ="Name" >
             </div>
             
-
-            <div>
-                <label for="">Address</label>
-                <input type="text"  class="" label ="address">
-            </div>
             <div>
                 <label for="">Phone</label>
                 <input type="phone" placeholder="" class="phone">
+            </div>
+            
+            <div>
+                <label for="">Email</label>
+                <input type="mail" placeholder="" class="mail">
             </div>
             
             <div>
@@ -40,30 +44,19 @@
                 
             </div>
             <div>
-                <label for="">Country</label>
-                <select type="text"  name="country">
-                    <option value="">Select country</option>
-                    <option value="">Nepal</option>
-                    <option value="">USA</option>
-                    <option value="">Australia</option>
-                    <option value="">Canada</option>
-                </select>
+                <label for="">Birthday</label>
+                <input type="date" placeholder="" class="dob" label ="dob" >
 
             </div>
-            <div>
-                <label for="">Message</label>
-                <textarea  placeholder="I am a student....."name="" id="text-area" ></textarea>
-
-            </div>
-
-       
             
             <div>
-                <label for="">Image </label>
-                <input type="file" placeholder="Name" class="name" label ="Name" >
+                <label for="">Password</label>
+                <input type="password" placeholder="" class="password" label ="password" >
             </div>
-            
-            
+            <div>
+                <label for="">Confirm Passsword</label>
+                <input type="password" placeholder="" class="password" label ="password" >
+            </div>
 
             <div>
                 <input type="checkbox" name="term" value="term" required>
@@ -78,7 +71,7 @@
             
             
             
-        </fieldset>
+        
 
     </form>
     
