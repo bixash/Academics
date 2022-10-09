@@ -1,0 +1,288 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+
+:root{
+    --font: 'Roboto', sans-serif;
+    --theme: skyblue;
+    --shadow: #c2c0c0;
+    --spidey: #fbd315;
+    --spideyred: #d9160d;
+}
+
+
+
+body{
+    background-color: var(--theme);
+    font-size: 1.6rem;
+    font-family: var(--font);
+
+}
+
+.nav-bar{
+    /* background-color: white; */
+    /* margin-left: 0.2em; */
+    padding-top: 0em; 
+    /* border-radius: 50px; */
+    /* border-bottom: 4px solid rgb(70, 190, 238);
+    border-left: 2px solid rgb(70, 190, 238);
+    box-shadow: -10px 10px 8px rgb(55, 184, 235); */
+}
+
+.nav-bar .logo{
+    text-align: center;
+    text-decoration: none;
+    font-family: var(--font);
+    font-size: 1.5em;
+    font-weight: bold;
+    background-color: white;
+    border-left: 2px solid rgb(70, 190, 238);
+    border-bottom: 2px solid rgb(70, 190, 238);
+    border-radius: 15px;
+    padding: 5px 15px;
+    color: blue;
+    box-shadow: -10px 10px 8px rgb(55, 184, 235);
+
+}
+.nav-bar .container {
+    background-color: skyblue; 
+    /* display: flex; */
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em;
+    
+
+}
+
+.nav-bar .logo span.man {
+    color: black;
+}
+.nav-bar .logo span.dash{
+    color: skyblue;
+}
+
+h1 {
+    background-color: skyblue;
+    padding: 0.2em;
+    text-align: center;
+    font-size: 1em;
+    font-weight: bold;
+    font-family: var(--font); 
+    color: white;
+    /* border-radius: 8px; */
+    /* border-left: 2px solid rgb(70, 190, 238);
+    border-bottom: 2px solid rgb(70, 190, 238); */
+    /* margin: none; */
+    
+}
+
+/* .nav-bar .logo:hover{
+    background-color: blue;
+    color: white;
+} */
+
+.logo span.man:hover{
+    color:skyblue;
+}
+
+.hero .container{
+    /* background-color: black; */
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    margin-top: 40px;
+}
+.hero .container img {
+    border-radius: 10px;
+    height: 650px;
+    width: 500px;
+    
+    margin-bottom: 40px;
+    box-shadow: -15px 10px 8px rgb(55, 184, 235);
+
+
+}
+/* .hero .container img:hover {
+    box-shadow: -15px 10px 8px rgb(55, 184, 235);
+    transition: box-shadow 0.2s ease-in-out;
+
+} */
+
+
+
+.hero .email{
+    
+    display: flex;
+    width: 200px;
+    justify-content: space-between;
+    background-color: white;
+    box-shadow: -15px 10px 8px rgb(55, 184, 235);
+    border-left: 1px solid rgb(52, 185, 238);
+    border-bottom: 1px solid rgb(55, 184, 235);
+    border-radius: 1em;
+    padding: 0.2em 1.5em; 
+    color: #fbd315;
+    
+}
+
+.hero .email a, i {
+    color:#fbd315 ;
+
+}
+
+.hero .email a:hover {
+    color:#fbd315;
+
+}
+
+.hero .email a {
+    
+    text-decoration: none;
+    font-family: var(--font);
+    font-size: 30px;
+    margin-right: 0px;
+
+    font-weight: bold;
+   
+    
+
+    
+}
+.hero .email i{
+    
+    font-size: 30px;
+    margin: auto;
+}
+
+.hero .email:hover {
+    /* background-color: #fbd315;
+    color: white; */
+    
+    transition: box-shadow 0.2s ease-in-out;
+    
+}
+
+/* h1:hover{
+    background-color: white;
+    color: skyblue;
+} */
+.table-div .container {
+    /* background-color: chocolate; */
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+
+}
+.table-div .container p {
+    background-color: white;
+    padding: 0.5em 1em;
+    border-radius: 0.5em;
+    font-family: var(--font);
+    font-size: 1.1em;
+    font-weight: bold;
+    margin-top: 1em;
+    margin-bottom: -2em;
+    color: blue;
+    border-left: 2px solid rgb(52, 185, 238);
+    border-bottom: 2px solid rgb(55, 184, 235);
+    box-shadow: -10px 10px 8px rgb(55, 184, 235);
+}
+
+/* .table-div .container p:hover {
+    background-color: blue;
+    color: white;
+} */
+
+
+table {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* background-color: rgb(178, 219, 235); */
+    background-color: white;
+    box-shadow: -10px 10px 8px rgb(55, 184, 235);
+    margin: 6em 3em;
+    padding: 2em 1em;
+    border-bottom: 2px solid var(--shadow);
+    border-radius: 5px;
+    
+}
+table .table-head {
+    background-color: red;
+    color: white;
+}
+th:hover {
+    background-color: white;
+    color: red;
+}
+table tr, th, td {
+    border-collapse: collapse;
+    text-align: center;
+    font-size: 1.2em;
+    padding: 0.3em 0.5em;
+    font-family: var(--font);
+    border: 2px solid red;
+
+    /*background-color: red;
+    color: white; */
+}
+
+table tr, td {
+    border: 2px solid skyblue;
+    color: white;
+    font-weight: bold;
+    border-collapse: collapse;
+    background-color: skyblue;
+}
+
+table td:nth-child(2):hover{
+    background-color: white;
+    color: blue;
+}
+
+table td:nth-child(2){
+    background-color: rgb(61, 61, 230);
+    color: white;
+    border: 2px solid rgb(61, 61, 230);
+}
+
+table td:nth-child(odd):hover{
+    background-color: white;
+    color: skyblue;
+}
+
+
+
+.contact-sec .container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 100%;
+    justify-content: space-evenly;
+    padding: 1em 0;
+    background-color:rgb(27, 25, 25);
+
+}
+.contact-sec a {
+    color: white;
+    font-size: 40px;
+
+
+}
+
+
+footer {
+    display: flex;
+    justify-content: center;
+    background-color:rgb(27, 25, 25);
+    color: white;
+    font-size: 20px;
+}
+
+table caption {
+    color: rgb(55, 184, 235) ;
+    font-size: 30px;
+}
