@@ -1,0 +1,46 @@
+* {
+    box-sizing: border-box;
+    /* margin: 0;
+     padding: 0; */
+}
+
+body {
+    font-family: sans-serif;
+    
+   
+}
+
+section {
+    /* border: 2px solid #f2f2f2; */
+    width: 80%;
+    padding: 3em;
+    margin: 0em auto;
+}
+
+@media (max-width: 768px) {
+    section {
+       /* color: #fff; */
+        width: 100%;
+       
+    }
+
+}
+
+h1 {
+    font-weight: 300;
+}
+  
+ul li {
+    list-style-type: none;
+}
+.ctn {
+    display: flex;
+    justify-content: space-between;
+    width: 85%;
+  
+}
+.contact {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
