@@ -1,0 +1,220 @@
+/* 
+
+.table-div {
+    border-collapse: collapse;
+    border: 1px solid black;
+    margin-left: 20px;
+}
+
+table tr th {
+    border: 1px solid white;
+    border-collapse: collapse;
+    padding: 10px;
+    background-color: red;
+    color: white;
+}
+table td {
+    border: 1px solid white;
+    border-collapse: collapse;
+    padding: 5px;
+}
+table tr:nth-child(even) {
+    background-color: #ddd;
+
+} 
+table tr:nth-child(odd) {
+
+   
+    background-color: skyblue;
+} 
+
+table td:nth-child(even) {
+    background-color: #ddd;
+}
+     */
+
+div.nav-bar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+
+}
+div.container {
+    /* display: flex;
+    flex-direction: column;
+    justify-content: space-between; */
+    background-color: #4285F4;
+    padding: 2em;
+    border-radius: 1em;
+    
+}
+h1 {
+    color: white;
+    font-size: 20px;
+}
+span {
+    display: block;
+    /* background-color: #DB4437; */
+    color: white;
+    padding: 0.2em;
+}
+
+
+img { 
+    transition: 1s;
+    border-radius: 50%;
+    height: 120px;
+    /* border: 4px solid #4285F4; */
+    /* animation-name: google; */
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+
+}
+@keyframes google {
+    0%{
+        border: 4px solid #4285F4;
+        
+    }
+    25%{
+        border: 4px solid #DB4437;
+
+    }
+       
+    50%{
+        border: 4px solid #F4B400;
+    }
+        
+    75%{
+        border: 4px solid #0F9D58;
+       
+    }
+    100% {
+        border: 4px solid #4285F4;
+        
+    }
+    
+}
+img:hover {
+    transition: 1s;
+    transform: scale(1.05);
+    animation-duration: 4s;
+    /* animation-name: man; */
+}
+
+@keyframes man {
+    
+    from{
+        border: 4px solid #F4B400;
+        /* transform: rotate(0deg); */
+
+    }
+    to {
+        border: 4px solid #DB4437;
+        /* transform: rotate(360deg); */
+    }
+}
+.balls {
+    margin: 2em;
+    display: flex;
+    justify-content: center;
+}
+.ball {
+    
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    position: relative; /*after using position relative no need of margin */
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-name: ball-anime;
+}
+
+@keyframes ball-anime {
+
+    0%{
+        background-color: #4285F4;
+        left: 0px;
+        top:0px;
+    }
+    25%{
+        background-color: #DB4437;
+        left: 40px;
+        top:0px;
+    }
+    50%{
+        background-color: #F4B400;
+        left: 40px;
+        top:80px;
+    }
+    75%{
+        background-color: #0F9D58;
+        left: 0px;
+        top: 80px;
+    }
+    100% {
+        background-color: #4285F4;
+        left: 0px;
+        top:0px;
+    }
+    
+    
+}
+
+
+table {
+
+    border-collapse: collapse;
+    margin: auto;
+    margin-top: 25px;
+    margin-bottom: 25px;
+
+}
+
+table td {
+    border: 1px solid black;
+    padding: 1em 2em;
+    font-size: 18px;
+
+}
+a {
+    /* background-color: red; */
+    color: white;
+    text-decoration: none;
+    margin: auto;
+    margin: 24px;
+    margin-bottom: 24px;
+    padding: 0.5em;
+    border-radius: 20px;
+    font-size: 18px;
+    /* animation-name: maile; */
+    animation-iteration-count: infinite;
+    animation-duration: 4s;
+}
+
+@keyframes maile {
+    0%{
+        background-color: #4285F4;
+        
+    }
+    25%{
+        background-color: #DB4437;
+       
+    }
+    50%{
+        background-color: #F4B400;
+        
+    }
+    75%{
+        background-color: #0F9D58;
+        
+    }
+    100% {
+        background-color: #4285F4;
+        
+    }
+    
+}
+
+
+    
+    

@@ -1,0 +1,66 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#header {
+    background-color: aquamarine;
+    height: 50px;
+    
+
+}
+#left {
+    background-color: lightgreen;
+    height: 300px;
+    width: 25%;
+    float: left;
+    
+
+}
+#right {
+    background-color: lightgreen;
+    height: 300px;
+    width: 25%;
+    float: right;
+    
+
+}
+#menu {
+    background-color: aqua;
+    height: 50px;
+    
+
+}
+#content {
+    background-color: skyblue;
+    height: 300px;
+    float: right;
+    width: 50%;
+    
+
+}
+
+#section1 {
+
+    background-color: cadetblue;
+    height:150px;
+    width: 50%;
+    float: left;
+
+}
+#section2 {
+
+    background-color: blue;
+    height:150px;
+    width: 50%;
+    float: left;
+
+}
+
+#footer {
+    background-color: blueviolet;
+    height: 50px;
+    clear: both;
+    
+}
