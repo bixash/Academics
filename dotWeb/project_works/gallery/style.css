@@ -26,9 +26,9 @@
     grid-template-columns: repeat(2, 50%);
     column-gap: 5px; */
     line-height:0;
-   column-count: 1;
-   column-gap:5px;
-   margin: 5px;
+    column-count: 1;
+    column-gap:5px;
+    margin: 5px;
 }
 
 #gallery img {
