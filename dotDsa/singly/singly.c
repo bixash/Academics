@@ -10,7 +10,6 @@ struct node {
 };
 
 typedef struct node node;
-node *head, *last;
 
 
 void insertBegin (node **head, int elt) {
@@ -22,26 +21,26 @@ void insertBegin (node **head, int elt) {
     printf("elt %d inserted", elt);
 
 }
-// void insertEnd (node **head, int elt) {
-//     node *temp, *temp1;
-//     temp = (node*)malloc(sizeof(node));
+void insertEnd (node **head, int elt) {
+    node *temp, *temp1;
+    temp = (node*)malloc(sizeof(node));
 
-//     temp->next =NULL;
-//     temp ->info = elt;
+    temp->next = NULL;
+    temp->info = elt;
 
-//     if (*head == NULL)
-//         (*head) = temp;
-//     else {
-//         temp1 = *head;
-//         while (temp1-> next != NULL)
-//         {
-//             temp1 =temp1-> next;
-//         }
+    if (*head == NULL)
+        (*head) = temp;
+    else {
+        temp1 = *head;
+        while (temp1-> next != NULL)
+        {
+            temp1 = temp1-> next;
+        }
         
-//         temp1 ->next = temp;
-//     }
+        temp1 ->next = temp;
+    }
 
-// }
+}
 
 
 // void insertSpecified (node **head, int elt, int pos) {
@@ -107,10 +106,10 @@ void insertBegin (node **head, int elt) {
 //     *head = temp;
 
 // }
-void displayElements () {
+void displayElements (node **head) {
     node *temp;
-    temp = head;
-     if (head == NULL)
+    temp = *head;
+     if (temp== NULL)
      {
         printf("Empty link list");
         exit(0);
@@ -123,14 +122,9 @@ void displayElements () {
             printf("%d\t", temp->info);
             temp = temp->next;
         }
-    }
-     
-     
+    }    
 
 }
-
-
-
 
 void main () {
 
@@ -143,14 +137,14 @@ void main () {
 
     while (1)
     {
-        printf("\nOptions are :\n1. insert\n2. Pop\n3. Display\n4. Exit");
+        printf("\nOptions are :\n1. insertBegin\n2. insertEnd\n3. Display\n4. Exit");
         printf("\nEnter your choice: ");
         scanf("%d",&choice);
 
 
         switch (choice)
         {
-            case 1: printf("\nEnter element you want to add: ");
+            case 1: printf("\nEnter element you want to insert: ");
                     scanf("%d", &elt);
                     insertBegin (&head, elt);
 
@@ -161,9 +155,9 @@ void main () {
                 printf("\n\'%d\'is popped\n", elt);
             break;
 
-            case 3: 
-            printf("display");
-                void displayElements();
+            case 3:
+            printf("\nElements: ");
+                displayElements(&head);
             
             break;
             
