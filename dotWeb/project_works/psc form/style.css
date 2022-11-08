@@ -8,29 +8,28 @@
 
 body {
     font-family: sans-serif;
+   
     /* font-size: 1px; */
     /* font-weight: bold; */
 }
 form {
-    width: 90%;
-    padding: 0em 1em;
-    margin: 2em auto;
-}
-legend {
-    text-align: center;
+    width: fit-content;
+    margin: 1em auto;
+   
 }
 
 
 header {
-
+    /* background: red; */
     padding-top: 1em;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
+    width: 980px;
 }
 h1 {
 
-    
+    /* background: #000; */
     font-size: 32px;
     font-weight: 400;
     width: fit-content;
@@ -44,10 +43,15 @@ h4 {
 }
 
 
-div {
-    margin: 1em;
+ .container {
+    /* background-color: #f2f2f2; */
+    margin: 0.2em;
+    padding: 0.6em;
 }
 
+.container div {
+    margin-top: 0.5em;
+}
 
 label {
     display: inline-block;
@@ -60,7 +64,10 @@ select, input {
     font-size: 14px;
     color: #888888;
 }
-
+input {
+    
+    width: 150px;
+}
 .btn{
     background-color: rgb(0, 128, 255);
     color: white;
