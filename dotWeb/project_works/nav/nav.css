@@ -14,8 +14,8 @@ body {
 
 .navbar {
 
-    background-color: yellow;
-    color: blueviolet;
+    background-color: #fafa55;
+    color: #6545ff;
     padding: 0.5em;
     
    
@@ -34,7 +34,7 @@ body {
     
     margin-left: 0.3em;
     padding: 10px;
-    border-left: 1.5px solid blueviolet;
+    border-left: 1.5px solid #6545ff;
     
 }
 
@@ -42,18 +42,13 @@ body {
     border-right: none;
 }
 
-.nav-btns:active {
-    background-color: #3f33c1;
-    color: white;
-
-}
-.nav-btns:hover{
-    background-color: #3f33c1;
+.nav-btns:active, .nav-btns:hover {
+    background-color: #6545ff;
     color: white;
 
 }
 
 .nav-btns:first-child {
-    background-color: #3f33c1;
+    background-color: #6545ff;
     color: white;
 }
