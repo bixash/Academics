@@ -21,6 +21,8 @@ void insertBegin (node **head, int elt) {
     printf("elt %d inserted", elt);
 
 }
+
+
 void insertEnd (node **head, int elt) {
     node *temp, *temp1;
     temp = (node*)malloc(sizeof(node));
@@ -150,9 +152,10 @@ void main () {
 
             break;
 
-            case 2: 
-               
-                printf("\n\'%d\'is popped\n", elt);
+            case 2: printf("\nEnter element you want to insert: ");
+                    scanf("%d", &elt);
+                    insertEnd (&head, elt);
+                
             break;
 
             case 3:
