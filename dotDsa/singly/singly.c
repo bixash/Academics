@@ -11,107 +11,212 @@ struct node {
 
 typedef struct node node;
 
+void insertBegin (node**, int);
+void insertEnd (node**, int);
+void insertSpecified (node**, int, int); 
+int deleteBegin (node **);
+int deleteEnd (node **);
+int deleteSpecified (node**, int);
+void displayElements (node**);
 
+
+void main () {
+
+    node *head;
+    head = NULL;
+    int delt;
+    int pos;
+    int elt;
+    int choice;
+
+    while (1)
+    {
+        printf("\nOptions are :\n1. insertBegin\n2. insertEnd\n3. insertSpecified\n4. deleteBegin\n5. deleteEnd\n6. deleteSpecified\n7. displayElements\n8. Exit");
+        printf("\nEnter your choice: ");
+        scanf("%d",&choice);
+
+
+        switch (choice)
+        {
+            case 1: 
+                printf("\nEnter element to insert from beginning: ");
+                scanf("%d", &elt);
+                insertBegin (&head, elt);
+                break;
+
+            case 2: 
+                printf("\nEnter element to insert from end : ");
+                scanf("%d", &elt);
+                insertEnd (&head, elt);
+                break;
+            case 3: 
+                printf("\nEnter element to insert from specified position: ");
+                scanf("%d", &elt);
+                printf("\nEnter position: ");
+                scanf("%d", &pos);
+                insertSpecified(&head, elt, pos);
+                break;
+            case 4: 
+                delt = deleteBegin (&head);
+                printf("\nDeleted item : %d" ,delt);
+                break;
+            case 5: 
+                delt = deleteEnd (&head);
+                printf("\nDeleted item : %d" ,delt);
+                break;
+            case 6: 
+                printf("\nEnter position: ");
+                scanf("%d", &pos);
+                delt = deleteSpecified(&head, pos);
+                printf("\nDeleted item : %d" , delt);
+                break;
+
+            case 7:
+                printf("\nElements: ");
+                displayElements(&head);
+                break;
+            
+            case 8:
+                exit(0);
+                break;
+
+            default:
+                printf("Invalid choice");
+                break;
+        }
+    }
+ 
+
+}
 void insertBegin (node **head, int elt) {
-    node *temp;
-    temp = (node*)malloc(sizeof(node));
-    temp->info = elt;
-    temp ->next = *head;
-    *head = temp;
+    node *newNode;
+    newNode = (node*)malloc(sizeof(node));
+    newNode->info = elt;
+    newNode ->next = *head;
+    *head = newNode;
     printf("elt %d inserted", elt);
 
 }
 
-
 void insertEnd (node **head, int elt) {
-    node *temp, *temp1;
-    temp = (node*)malloc(sizeof(node));
+    node *newNode, *last;
+    newNode = (node*)malloc(sizeof(node));
 
-    temp->next = NULL;
-    temp->info = elt;
+    newNode->next = NULL;
+    newNode->info = elt;
 
     if (*head == NULL)
-        (*head) = temp;
+        (*head) = newNode;
     else {
-        temp1 = *head;
-        while (temp1-> next != NULL)
+        last = *head;
+        while (last-> next != NULL)
         {
-            temp1 = temp1-> next;
+            last = last-> next;
         }
         
-        temp1 ->next = temp;
+        last ->next = newNode;
     }
 
 }
 
-
-// void insertSpecified (node **head, int elt, int pos) {
-
-//     node *temp *temp1;
-
-//     temp = (node*)malloc(sizeof(node));
-
-//     temp->info =elt;
-//     temp1 = *head;
-
-//     if(head == NULL) {
-//         printf("Void insertion");
-//         exit(1);
-//     }
-
-//     for (int i = 1; i < pos-1; i++)
-//     {
-//         temp1= temp1->next ;
-        
-//         temp ->next = temp1 ->next;
-//         temp1 ->next = temp;
-//     }
-    
-//     temp ->next = *head;
-//     *head = temp;
-
-// }
-// int deleteBegin (node **head, int elt) {
-//     node *temp;
-//     int elt = -1;
-
-//     if (*head == NULL) 
-//      printf("list is empty");
-
-//     else {
-//         temp = *head;
-//         *head = temp -> next;
-//         elt = temp -> info;
-//         free(temp);
-
-//     }
-//     return elt;
+void insertSpecified (node **head, int elt, int pos) {
 
 
-// }
+    node *newNode, *temp;
 
-// int deleteEnd (node **head, int elt) {
-//    node *temp, *temp1;
-//    int elt = -1;
+    newNode = (node*)malloc(sizeof(node));
 
-//     if (head == NULL)
-//         prinf("\nList is empty");
-
-    
-
-// }
-// int deleteSpecified (node **head, int elt) {
-//     node *temp;
-//     temp = (node*)malloc(sizeof(node));
-//     temp->info =elt;
-//     temp ->next = *head;
-//     *head = temp;
-
-// }
-void displayElements (node **head) {
-    node *temp;
+    newNode->info = elt;
     temp = *head;
-     if (temp== NULL)
+
+    if(head == NULL) {
+        printf("Void insertion");
+        exit(1);
+    }
+
+    for (int i = 1; i < pos-1; i++)
+    {
+        temp= temp->next;
+        
+        newNode ->next = temp ->next;
+        temp ->next = newNode;
+    }
+    
+    newNode ->next = *head;
+    *head = newNode;
+
+}
+
+int deleteBegin (node **head) {
+    node *newNode;
+    int delt = -1;
+
+    if (*head == NULL) 
+     printf("list is empty");
+
+    else {
+        newNode = *head;
+        *head = newNode -> next;
+        delt = newNode -> info;
+        free(newNode);
+
+    }
+    return delt;
+
+
+}
+
+int deleteEnd (node **head) {
+   node *newNode, *last;
+   int delt = -1;
+
+    if (head == NULL)
+        printf("\nList is empty");
+
+    else if ((*head)-> next == NULL)
+    {
+        newNode = *head;
+        *head = NULL;
+        delt = newNode ->info;
+        free(newNode);
+    }
+    else {
+        newNode =*head;
+        while (newNode->next != NULL)
+        {
+            last = newNode;
+            newNode = newNode->next;
+        }
+
+        delt = newNode -> info;
+        newNode->next =NULL;
+        free(newNode);
+        
+    }
+    return delt;
+}
+
+int deleteSpecified (node **head, int pos) {
+    node *newNode, *temp;
+    int delt =-1;
+    int i;
+
+    newNode= *head;
+    for (i=1; i < pos; i++)
+    {
+        temp = newNode;
+        newNode =newNode-> next;
+    }
+    delt = newNode->info;
+    temp ->next = newNode->next;
+    free(newNode);
+    return delt;
+}
+
+void displayElements (node **head) { 
+    node *newNode;
+    newNode = *head;
+     if (newNode== NULL)
      {
         printf("Empty link list");
         exit(0);
@@ -119,61 +224,11 @@ void displayElements (node **head) {
      
     else
     {
-        while (temp != NULL)
+        while (newNode != NULL)
         {
-            printf("%d\t", temp->info);
-            temp = temp->next;
+            printf("%d\t", newNode->info);
+            newNode = newNode->next;
         }
     }    
-
-}
-
-void main () {
-
-    node *head;
-    head = NULL;
-    
-
-    int elt;
-    int choice;
-
-    while (1)
-    {
-        printf("\nOptions are :\n1. insertBegin\n2. insertEnd\n3. Display\n4. Exit");
-        printf("\nEnter your choice: ");
-        scanf("%d",&choice);
-
-
-        switch (choice)
-        {
-            case 1: printf("\nEnter element you want to insert: ");
-                    scanf("%d", &elt);
-                    insertBegin (&head, elt);
-
-            break;
-
-            case 2: printf("\nEnter element you want to insert: ");
-                    scanf("%d", &elt);
-                    insertEnd (&head, elt);
-                
-            break;
-
-            case 3:
-            printf("\nElements: ");
-                displayElements(&head);
-            
-            break;
-            
-            case 4:
-                exit(0);
-            break;
-
-            default:
-            printf("Invalid choice");
-            break;
-        }
-    }
-
-    
 
 }
