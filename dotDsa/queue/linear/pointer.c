@@ -5,28 +5,31 @@
 #define SIZE 5
 
 
-struct pointer
+struct queue
 {
-    int queue[SIZE];
+    int item[SIZE];
     int front; 
     int rear;
 };
 
-void enQueue(struct pointer *que, int value);
-void deQueue(struct pointer *que);
-void display(struct pointer *que);
+
+typedef struct queue queue;
+
+void enQueue(queue*);
+void deQueue(queue*);
+void display(queue*);
 
 
 
 int main() {
 
-    struct pointer que;
-    que.front = 0;
-    que.rear = -1;
+    queue *que;
+    que->front = 0;
+    que->rear = -1;
  
   while (1)
     {
-      int elt, choice;
+      int choice;
 
       printf("\nOptions are :\n1. Enqueue\n2. Dequeue\n3. Display\n4. Exit");
       printf("\nEnter your choice: ");
@@ -38,20 +41,19 @@ int main() {
 
 
         case 1:  
-          printf("\nEnter element: ");
-          scanf("%d", &elt);
-          enQueue(&que, elt);
+          
+          enQueue(que);
 
         break;
 
         case 2: 
           
-            deQueue(&que);
+            deQueue(que);
             
         break;
 
         case 3: 
-            display(&que);
+            display(que);
         
         break;
         
@@ -67,7 +69,11 @@ int main() {
   return 0;
 }
 
-void enQueue(struct pointer *que, int value) {
+void enQueue(queue *que) {
+
+  int elt;
+  printf("\nEnter element: ");
+  scanf("%d", &elt);
 
   if (que->rear == SIZE - 1)
     printf("\nQueue is Full!!");
@@ -75,20 +81,20 @@ void enQueue(struct pointer *que, int value) {
    
     
     que->rear = que->rear + 1;
-    que->queue[que->rear] = value;
+    que->item[que->rear] = elt;
 
-    printf("\nInserted -> %d\n", value);
+    printf("\nInserted -> %d\n", elt);
 
   }
 }
 
-void deQueue(struct pointer *que) {
+void deQueue(queue *que) {
 
-  if (que->front == -1)
+  if (que->rear < que->front)
     printf("\nQueue is Empty!\n");
 
   else {
-    printf("\nDeleted : %d", que->queue[que->front]);
+    printf("\nDeleted : %d", que->item[que->front]);
 
     que->front = que->front + 1;
   }
@@ -96,7 +102,7 @@ void deQueue(struct pointer *que) {
 }
 
 // Function to print the queue
-void display(struct pointer *que) {
+void display(queue *que) {
   int i;
 
   if (que->rear == -1)
@@ -108,7 +114,8 @@ void display(struct pointer *que) {
     printf("\nQueue elements are:\n");
 
     for (i = que->front; i <= que->rear; i++)
-      printf("%d  ", que->queue[i]);
+    
+      printf("%d  ", que->item[i]);
 
   }
 

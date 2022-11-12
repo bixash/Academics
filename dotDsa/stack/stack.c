@@ -10,6 +10,50 @@ struct stack
 
 typedef struct stack stack;
 
+void push(stack*);
+int pop(stack*);
+void display (stack*);
+
+
+void main ()
+{
+    stack s;
+    s.top = -1;
+    int choice, elt;
+    while (1)
+    {
+        printf("\nOptions are :\n1. Push\n2. Pop\n3. Display\n4. Exit");
+        printf("\nEnter your choice: ");
+        scanf("%d",&choice);
+
+
+        switch (choice)
+        {
+            case 1:  push(&s);
+
+            break;
+
+            case 2: 
+                elt = pop(&s);
+                printf("\n\'%d\'is popped\n", elt);
+            break;
+
+            case 3: 
+                display(&s);
+            
+            break;
+            
+            case 4:
+                exit(0);
+            break;
+
+            default:
+            printf("Invalid choice");
+            break;
+        }
+    }
+}
+
 void push(stack* s) 
 {
     int elt;
@@ -64,42 +108,4 @@ void display (stack *s) {
             printf("\n");
         }
 
-}
-void main ()
-{
-    stack s;
-    s.top = -1;
-    int choice, elt;
-    while (1)
-    {
-        printf("\nOptions are :\n1. Push\n2. Pop\n3. Display\n4. Exit");
-        printf("\nEnter your choice: ");
-        scanf("%d",&choice);
-
-
-        switch (choice)
-        {
-            case 1:  push(&s);
-
-            break;
-
-            case 2: 
-                elt = pop(&s);
-                printf("\n\'%d\'is popped\n", elt);
-            break;
-
-            case 3: 
-                display(&s);
-            
-            break;
-            
-            case 4:
-                exit(0);
-            break;
-
-            default:
-            printf("Invalid choice");
-            break;
-        }
-    }
 }
