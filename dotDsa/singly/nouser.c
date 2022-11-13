@@ -14,9 +14,9 @@ typedef struct node node;
 void insertBegin (node**, int);
 void insertEnd (node**, int);
 void insertSpecified (node**, int, int); 
-int deleteBegin (node **);
-int deleteEnd (node **);
-int deleteSpecified (node**, int);
+void deleteBegin (node **);
+void deleteEnd (node **);
+void deleteSpecified (node**, int);
 void displayElements (node**);
 
 
@@ -24,6 +24,7 @@ void main () {
 
     node *head;
     head = NULL;
+    int delt;
     int pos;
     int elt;
     int choice;
@@ -56,18 +57,16 @@ void main () {
                 insertSpecified(&head, elt, pos);
                 break;
             case 4: 
-                elt = deleteBegin (&head);
-                printf("\nDeleted item : %d" ,elt);
+                deleteBegin (&head);
                 break;
             case 5: 
-                elt = deleteEnd (&head);
-                printf("\nDeleted item : %d" ,elt);
+                deleteEnd (&head);
+            
                 break;
             case 6: 
                 printf("\nEnter position: ");
                 scanf("%d", &pos);
-                elt = deleteSpecified(&head, pos);
-                printf("\nDeleted item : %d" , elt);
+                deleteSpecified(&head, pos);
                 break;
 
             case 7:
@@ -130,18 +129,21 @@ void insertSpecified (node **head, int elt, int pos) {
 
     if(head == NULL) {
         printf("Void insertion");
+        exit(1);
     }
 
     for (int i = 1; i < pos-1; i++)
     {
         temp= temp->next;
-      
+        
+       
     }
-    newNode ->next = temp ->next;
+     newNode ->next = temp ->next;
     temp ->next = newNode;
+    
+   
 }
-
-int deleteBegin (node **head) {
+void deleteBegin (node **head) {
     node *newNode;
     int delt = -1;
 
@@ -152,15 +154,15 @@ int deleteBegin (node **head) {
         newNode = *head;
         *head = newNode -> next;
         delt = newNode -> info;
+        printf("\nDeleted item : %d" , delt);
         free(newNode);
 
     }
-    return delt;
 
 
 }
 
-int deleteEnd (node **head) {
+void deleteEnd (node **head) {
    node *newNode, *last;
    int delt = -1;
 
@@ -184,15 +186,16 @@ int deleteEnd (node **head) {
 
         delt = newNode -> info;
         last->next =NULL;
+        printf("\nDeleted item : %d" , delt);
         free(newNode);
         
     }
-    return delt;
+    
 }
 
-int deleteSpecified (node **head, int pos) {
+void deleteSpecified (node **head, int pos) {
     node *newNode, *temp;
-    int delt =-1;
+    int delt;
     int i;
 
     newNode= *head;
@@ -203,8 +206,9 @@ int deleteSpecified (node **head, int pos) {
     }
     delt = newNode->info;
     temp ->next = newNode->next;
+    printf("\nDeleted item : %d" , delt);
     free(newNode);
-    return delt;
+    
 }
 
 void displayElements (node **head) { 
@@ -213,7 +217,7 @@ void displayElements (node **head) {
      if (newNode== NULL)
      {
         printf("Empty link list");
-        exit(0);
+        //1exit(0);
      }
      
     else

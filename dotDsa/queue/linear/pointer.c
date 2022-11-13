@@ -23,9 +23,9 @@ void display(queue*);
 
 int main() {
 
-    queue *que;
-    que->front = 0;
-    que->rear = -1;
+    queue que;
+    que.front = 0;
+    que.rear = -1;
  
   while (1)
     {
@@ -42,18 +42,18 @@ int main() {
 
         case 1:  
           
-          enQueue(que);
+          enQueue(&que);
 
         break;
 
         case 2: 
           
-            deQueue(que);
+            deQueue(&que);
             
         break;
 
         case 3: 
-            display(que);
+            display(&que);
         
         break;
         
