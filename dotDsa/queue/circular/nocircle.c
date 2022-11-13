@@ -12,9 +12,6 @@ void display();
 
 int main () {
     int choice;
-
-   
-
     while (1)
     {
         printf("\n1. Enqueue");
