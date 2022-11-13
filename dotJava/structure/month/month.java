@@ -3,9 +3,6 @@ import java.util.Scanner;
 public class month {
     
 
-    /**
-     * @param args
-     */
     public static void main(String[] args) {
 
         System.out.print("Enter a month number to find out days of it: ");
