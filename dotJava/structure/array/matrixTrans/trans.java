@@ -1,4 +1,5 @@
-package array.matrix.trans;
+// 37. Write a program to find transpose of a matrix.
+package array.matrixTrans;
 import java.util.Scanner;
 public class trans {
     public static void main(String[]args) {

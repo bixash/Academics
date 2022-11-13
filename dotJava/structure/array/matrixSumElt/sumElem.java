@@ -1,4 +1,7 @@
-package array.matrix.sumElem;
+// 35. Write a program that accepts the elements of 3 × 3 matrix and calculate the sum of all
+// elements of the matrix.
+
+package array.matrixSumElt;
 import java.util.Scanner;
 
 public class sumElem {

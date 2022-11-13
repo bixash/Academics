@@ -1,4 +1,6 @@
-package array.matrix.sumRow;
+// 36. Write a program to read 4 × 4 matrix and find sum of each row.
+
+package array.matSumRow;
 import java.util.Scanner;
 public class sumRow {
 

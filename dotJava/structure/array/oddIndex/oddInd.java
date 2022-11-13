@@ -1,4 +1,7 @@
-package array.oneD.oddInd;
+
+// 33. Write a program to add elements stored in odd indices in an array of integer.
+
+package array.oddIndex;
 import java.util.Scanner;
 public class oddInd {
 

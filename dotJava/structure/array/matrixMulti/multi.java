@@ -1,4 +1,8 @@
-package array.matrix.multi;
+
+// 38. Write a program to multiply two matrices and display the resultant matrix.
+
+
+package array.matrixMulti;
 import java.util.Scanner;
 public class multi {
 

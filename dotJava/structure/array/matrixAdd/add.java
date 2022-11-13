@@ -1,4 +1,7 @@
-package array.matrix.add;
+
+// 34. Write a program to add two matrices.
+
+package array.matrixAdd;
 import java.util.Scanner;
 public class add {
 
