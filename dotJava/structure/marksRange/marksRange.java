@@ -26,14 +26,14 @@ public class marksRange {
 
             for(i=0; i<20; i++)
             {
-            
                 temp = sc.nextInt();
-                
+
                 while(temp > 100 || temp < 0) {
 
                     System.out.println("Invalid marks! Enter Again!");
                     temp = sc.nextInt();
                 }
+                
                 marks[i]= temp;
             }
                 
