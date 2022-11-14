@@ -5,7 +5,7 @@
 // c. in the range 41 to 60, and
 // d. in the range 0 to 4
 
-package marksRange;
+package array.marksRange;
 import java.util.Scanner;
 public class marksRange {
     
@@ -17,11 +17,8 @@ public class marksRange {
         int marks[]= new int[20];
         try (Scanner sc = new Scanner(System.in)){
 
-            
             int temp;
-            
             System.out.println("Enter obtained marks of 20 student:");
-
             //marks input of 20 students
 
             for(i=0; i<20; i++)
@@ -40,8 +37,6 @@ public class marksRange {
                 
         }
             
-        
-            
             //display
             System.out.println("Marks are:");
             for( i=0; i<20; i++) {
@@ -58,19 +53,19 @@ public class marksRange {
             for( i=0; i<20; i++) {
                 if(marks[i]>= 81 && marks[i]<=100){
 
-                    excel= excel+1;
+                   excel++;
                 }
                 else if (marks[i]>= 61 && marks[i]<= 80)
                 {
-                    great = great+1;
+                    great++;
                 }
                 else if (marks[i]>= 41 && marks[i]<= 60)
                 {
-                    good = good+1;
+                    good++;
                 }
                 else 
                 {
-                    meh = meh+1;
+                     meh++;
                 }
 
             }
