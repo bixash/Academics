@@ -3,6 +3,7 @@
 #include <malloc.h>
 #include <process.h>
 
+int count=0;
 struct node {
     int info;
     struct node *next;
@@ -27,7 +28,7 @@ void main () {
     int pos;
     int elt;
     int choice;
-
+    
     while (1)
     {
         printf("\nOptions are :\n1. insertBegin\n2. insertEnd\n3. insertSpecified\n4. deleteBegin\n5. deleteEnd\n6. deleteSpecified\n7. displayElements\n8. Exit");
@@ -49,11 +50,33 @@ void main () {
                 insertEnd (&head, elt);
                 break;
             case 3: 
-                printf("\nEnter element to insert from specified position: ");
-                scanf("%d", &elt);
-                printf("\nEnter position: ");
-                scanf("%d", &pos);
-                insertSpecified(&head, elt, pos);
+                if(count == 0 ) {
+                    printf("\nFirst add element to insert in specified position!");
+                } 
+                else 
+                {
+                    printf("\nEnter element: ");
+                    scanf("%d", &elt);
+                    printf("\nEnter position: ");
+                    scanf("%d", &pos);
+
+                    if(pos == 1){
+                        insertBegin (&head, elt);
+                    }
+                    else if (pos <= count && pos > 1) 
+                    {   
+                        insertSpecified(&head, elt, pos);
+                    }
+                    else {
+                        printf("\nInvalid position!");
+                    }
+                }
+
+                // printf("\nEnter element to insert from specified position: ");
+                // scanf("%d", &elt);
+                // printf("\nEnter position: ");
+                // scanf("%d", &pos);
+                // insertSpecified(&head, elt, pos);
                 break;
             case 4: 
                 elt = deleteBegin (&head);
@@ -93,6 +116,7 @@ void insertBegin (node **head, int elt) {
     newNode->info = elt;
     newNode ->next = *head;
     *head = newNode;
+    count++;
     printf("elt %d inserted", elt);
 
 }
@@ -115,7 +139,7 @@ void insertEnd (node **head, int elt) {
         
         last ->next = newNode;
     }
-
+    count++;
 }
 
 void insertSpecified (node **head, int elt, int pos) {
@@ -131,14 +155,14 @@ void insertSpecified (node **head, int elt, int pos) {
     if(head == NULL) {
         printf("Void insertion");
     }
-
     for (int i = 1; i < pos-1; i++)
     {
         temp= temp->next;
-      
+    
     }
     newNode ->next = temp ->next;
     temp ->next = newNode;
+    count++;
 }
 
 int deleteBegin (node **head) {

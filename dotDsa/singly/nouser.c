@@ -138,7 +138,7 @@ void insertSpecified (node **head, int elt, int pos) {
         
        
     }
-     newNode ->next = temp ->next;
+    newNode ->next = temp ->next;
     temp ->next = newNode;
     
    
