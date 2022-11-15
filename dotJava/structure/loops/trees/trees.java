@@ -62,21 +62,40 @@ public class trees {
             
             for(int j=1; j <= i; j++) {
                 
-
-                
-                if (i%2 == 0) {
-                    count = (j+1)%2;
-                    System.out.print(count+" ");
-                }
-                else{
-                    count = j%2;
-                    System.out.print(count+" ");
-                }
+                count=(i+j)%2;
+                if(count == 1)
+                    System.out.print("0 ");
+                else
+                    System.out.print("1 ");
                 
                 // count++;
             }
+            // System.out.print("y");
             System.out.print("\n");
+           
         }
+       
+
+
+    //=================== this my way of doing=========== //
+        // for (int i = 1; i <= 5; i++) {
+            
+        //     for(int j=1; j <= i; j++) {
+            
+                
+        //         if (i%2 == 0) {
+        //             count = (j+1)%2;
+        //             System.out.print(count+" ");
+        //         }
+        //         else{
+        //             count = j%2;
+        //             System.out.print(count+" ");
+        //         }
+                
+        //         // count++;
+        //     }
+        //     System.out.print("\n");
+        // }
 
     }
     
