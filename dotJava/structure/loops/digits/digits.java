@@ -16,7 +16,7 @@ public class digits {
         while(num > 0) {
 
             rem = num % 10;
-            num = (num-rem)/10;
+            num = (num-rem)/10; // num/10
             digit = digit + rem;
             
         }
