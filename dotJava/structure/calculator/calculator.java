@@ -1,5 +1,4 @@
-// 14. Write a program using switch statement to develop a simple calculator for +, -, *, /, and
-// % operators.
+// 14. Write a program using switch statement to develop a simple calculator for +, -, *, /, and % operators.
 
 
 package calculator;
@@ -9,8 +8,6 @@ public class calculator {
 
         int a, b, choice;
         try (Scanner sc = new Scanner(System.in)) {
-
-            
 
             System.out.print("\nEnter 1st operand: ");
             a = sc.nextInt();
@@ -51,7 +48,6 @@ public class calculator {
                     System.out.println("\nInvalid option");
                     break;
             }
-
             
         }
 

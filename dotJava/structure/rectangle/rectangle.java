@@ -1,7 +1,7 @@
-package scanner;
+package rectangle;
 import java.util.Scanner;
 
- public class scanner {
+ public class rectangle {
     public static void main (String[]args) {
         try (Scanner scan = new Scanner(System.in)) {
             System.out.print("\nEnter length of rectangle: ");
