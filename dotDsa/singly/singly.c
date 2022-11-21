@@ -50,27 +50,21 @@ void main () {
                 insertEnd (&head, elt);
                 break;
             case 3: 
-                if(count == 0 ) {
-                    printf("\nFirst add element to insert in specified position!");
-                } 
-                else 
-                {
-                    printf("\nEnter element: ");
-                    scanf("%d", &elt);
-                    printf("\nEnter position: ");
-                    scanf("%d", &pos);
+                
+                printf("\nEnter element: ");
+                scanf("%d", &elt);
+                printf("\nEnter position: ");
+                scanf("%d", &pos);
 
-                    if(pos == 1){
-                        insertBegin (&head, elt);
-                    }
-                    else if (pos <= count && pos > 1) 
-                    {   
-                        insertSpecified(&head, elt, pos);
-                    }
-                    else {
-                        printf("\nInvalid position!");
-                    }
+                if(pos == 1){
+                    insertBegin (&head, elt);
                 }
+                else 
+                {   
+                    insertSpecified(&head, elt, pos);
+                }
+                   
+                
 
                 // printf("\nEnter element to insert from specified position: ");
                 // scanf("%d", &elt);
@@ -89,8 +83,14 @@ void main () {
             case 6: 
                 printf("\nEnter position: ");
                 scanf("%d", &pos);
-                elt = deleteSpecified(&head, pos);
-                printf("\nDeleted item : %d" , elt);
+                if(pos == 1){
+                    deleteBegin (&head);
+                }
+                else {   
+                    deleteSpecified(&head, pos);
+                    elt = deleteSpecified(&head, pos);
+                    printf("\nDeleted item : %d" , elt);
+                }
                 break;
 
             case 7:
@@ -120,7 +120,7 @@ void insertBegin (node **head, int elt) {
     printf("elt %d inserted", elt);
 
 }
-
+    // last is used as temp
 void insertEnd (node **head, int elt) {
     node *newNode, *last;
     newNode = (node*)malloc(sizeof(node));
@@ -144,24 +144,23 @@ void insertEnd (node **head, int elt) {
 
 void insertSpecified (node **head, int elt, int pos) {
 
-
     node *newNode, *temp;
-
     newNode = (node*)malloc(sizeof(node));
 
     newNode->info = elt;
     temp = *head;
 
-    if(head == NULL) {
+    if(head == NULL) 
         printf("Void insertion");
-    }
-    for (int i = 1; i < pos-1; i++)
-    {
-        temp= temp->next;
-    
-    }
-    newNode ->next = temp ->next;
-    temp ->next = newNode;
+    else {
+        for (int i = 1; i < pos-1; i++)
+        {
+            temp= temp->next;
+        
+        }
+        newNode ->next = temp ->next;
+        temp ->next = newNode;
+    }  
     count++;
 }
 
@@ -180,7 +179,7 @@ int deleteBegin (node **head) {
 
     }
     return delt;
-
+    count--;
 
 }
 
@@ -212,6 +211,7 @@ int deleteEnd (node **head) {
         
     }
     return delt;
+    count--;
 }
 
 int deleteSpecified (node **head, int pos) {
@@ -229,6 +229,8 @@ int deleteSpecified (node **head, int pos) {
     temp ->next = newNode->next;
     free(newNode);
     return delt;
+
+    count--;
 }
 
 void displayElements (node **head) { 
@@ -237,7 +239,7 @@ void displayElements (node **head) {
      if (newNode== NULL)
      {
         printf("Empty link list");
-        exit(0);
+        
      }
      
     else
