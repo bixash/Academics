@@ -16,7 +16,7 @@ int main ()
     scanf("%d", &n);
 
     FILE *fp;
-    fp = fopen("student.txt", "w");
+    fp = fopen("C:\\Users\\Asus\\OneDrive\\Desktop\\GitHub\\academics\\dotC\\filehandle\\student.txt", "w");
 
     if (fp == NULL) 
     {
@@ -30,18 +30,19 @@ int main ()
     {
         printf("Enter data for student: %d \n", i+1);
 
-        printf("Enter name: \t");
+        printf("Enter name: ");
         scanf("%s", &s[i].name);
 
 
-        printf("Enter roll: \t");
+        printf("Enter roll: ");
         scanf("%d", &s[i].roll);
 
-        printf("Enter marks subjects: \t");
+        printf("Enter marks subjects: ");
         scanf("%d", &s[i].marks);
 
         // File write mode
         fwrite(&s,sizeof(s),1,fp);
+         printf("\n ######################## : \n");
 
     }
     
