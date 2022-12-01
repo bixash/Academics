@@ -90,14 +90,14 @@ void display()
         printf("\nQueue elements are:\n");
 
 
-        // while(i<= rear)  
+        // while(i != rear)  
         // {  
         //     printf("%d\t", cqueue[i]);  
         //     i=(i+1)% MAX;  
         // }  
-        for(i=(front+1)%MAX; i!=rear; i=(i+1)%MAX)
+        for(i= (front+1)% MAX; i!=rear; i=(i+1)% MAX)
         {
-        printf("%d\t", cqueue[i]);
+            printf("%d\t", cqueue[i]);
         }
         printf("%d\t", cqueue[rear]);
 
