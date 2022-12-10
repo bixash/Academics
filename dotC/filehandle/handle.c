@@ -7,7 +7,7 @@ int main()
    FILE *fptr;
 
    // use appropriate location if you are using MacOS or Linux
-   fptr = fopen("C:\\Users\\Asus\\OneDrive\\Desktop\\C-Programming\\filehandle\\program.txt","w+");
+   fptr = fopen("program.txt","w");
 
    if(fptr == NULL)
    {

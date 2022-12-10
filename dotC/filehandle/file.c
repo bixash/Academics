@@ -16,7 +16,7 @@ int main ()
     scanf("%d", &n);
 
     FILE *fp;
-    fp = fopen("C:\\Users\\Asus\\OneDrive\\Desktop\\GitHub\\academics\\dotC\\filehandle\\student.txt", "w");
+    fp = fopen("student.txt", "w");
 
     if (fp == NULL) 
     {
@@ -42,7 +42,7 @@ int main ()
 
         // File write mode
         fwrite(&s,sizeof(s),1,fp);
-         printf("\n ######################## : \n");
+        //  printf("\n ######################## : \n");
 
     }
     

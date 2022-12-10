@@ -17,9 +17,9 @@ typedef struct bnode bnode;
 void insert(bnode*, int);
 void delete(bnode*, int);
 void search (bnode*, int);
-void preOrder (bnode*);
-void postOrder (bnode*);
-void inOrder(bnode*);
+void preorder (bnode*);
+void postorder (bnode*);
+void inorder(bnode*);
 
 
 void main () {
@@ -30,7 +30,7 @@ void main () {
     
     while (1)
     {
-        printf("\nOptions are :\n1. insert\n2. delete\n3. search\n4. pre-order\n5. post-order\n6. in-order\n7. exit\n");
+        printf("\noptions are :\n1. insert\n2. delete\n3. search\n4. pre-order\n5. post-order\n6. in-order\n7. exit\n");
         printf("\nEnter your choice: ");
         scanf("%d", &choice);
 
@@ -50,20 +50,19 @@ void main () {
             case 3: 
                 printf("\nEnter element you want to search: ");
                 scanf("%d", &elt);
-
                 search(&root, elt);
                 break;
 
             case 4: 
-                preOrder (&root);
+                preorder (&root);
                 break;
 
             case 5: 
-                postOrder (&root);
+                postorder (&root);
                 break;
 
             case 6: 
-                inOrder(&root);
+                inorder(&root);
                 break;
 
             case 7:
@@ -80,11 +79,11 @@ void main () {
 }
 
 // If node == NULL 
-//     return createNode(data)
-// if (data < node->data)
-//     node->left  = insert(node->left, data);
-// else if (data > node->data)
-//     node->right = insert(node->right, data);  
+//     return createNode(info)
+// if (info < node->info)
+//     node->left  = insert(node->left, info);
+// else if (info > node->info)
+//     node->right = insert(node->right, info);  
 // return node;
 
 void insert(bnode* root, int elt) {
@@ -105,8 +104,7 @@ void insert(bnode* root, int elt) {
 
 }
 
-
-struct bnode *find_min(struct bnode *root)
+struct bnode *find_min(bnode *root)
 {
     if(root == NULL)
         return 0;
@@ -149,18 +147,21 @@ void delete(bnode* root, int elt) {
 }
 
 void search (bnode* root, int elt) {
-
-    if(root == NULL)
-        return 0;
-    else if(root->left == NULL)
-        return root;
-    else
-        return(find_min(root->left));
-
+    if (root == NULL )
+        return NULL;
+    else if (elt == root->info)
+        return root->info;
+    else if (elt < root->info)
+        return search(root->left, elt);
+    else if (elt > root->info )
+        return search(root->right, elt);
+    else {
+        printf("\nItem not found!");
+    }
 }
 
 
-void preOrder(bnode *root)
+void preorder(bnode *root)
 {
     if(root!=NULL)
     {
@@ -171,21 +172,21 @@ void preOrder(bnode *root)
 }
 
 
-void postOrder (bnode* root) {
+void postorder (bnode* root) {
     if(root!=NULL)
     {
-        postOrder(root->left);
-        postOrder(root->right);
+        postorder(root->left);
+        postorder(root->right);
         printf("%d", root->info);
     }
 }
 
-void inOrder(bnode* root) {
+void inorder(bnode* root) {
 
-    if(root!=NULL)
+    if(root != NULL)
     {
-        inOrder(root->left);
+        inorder(root->left);
         printf("%d", root->info);
-        inOrder(root->right);
+        inorder(root->right);
     }
 }
