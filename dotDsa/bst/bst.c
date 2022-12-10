@@ -15,11 +15,11 @@ struct bnode {
 typedef struct bnode bnode;
 
 void insert(bnode*, int);
-void delete(bnode **, int);
-void search (bnode **, int);
-void preOrder (bnode**);
-void postOrder (bnode**);
-void inOrder(bnode**);
+void delete(bnode*, int);
+void search (bnode*, int);
+void preOrder (bnode*);
+void postOrder (bnode*);
+void inOrder(bnode*);
 
 
 void main () {
@@ -96,6 +96,7 @@ void insert(bnode* root, int elt) {
         root->info= elt;
     }
     else {
+
         if(elt <= root->info)
             insert(root->left, elt);
         else
@@ -104,29 +105,87 @@ void insert(bnode* root, int elt) {
 
 }
 
-void delete(bnode** root, int elt) {
 
-
-    if ((*root)== NULL)
-        return NULL;
-    else if (elt == (*root)->info)
+struct bnode *find_min(struct bnode *root)
+{
+    if(root == NULL)
+        return 0;
+    else if(root->left == NULL)
         return root;
-    else if( elt >= (*root)->info)
-        delete((*root)->left, elt);
     else
-        delete((*root)->right, elt);
-
-}
-void search (bnode** root, int elt) {
-
+        return(find_min(root->left));
 }
 
-void preOrder (bnode** root) {
-    
-}
-void postOrder (bnode** root) {
+void delete(bnode* root, int elt) {
+
+
+    struct bnode *temp;
+    if(root==NULL)
+        printf("\nEmpty tree");
+
+    else if(elt < root->info)
+        delete(root->left, elt);
+
+    else if(elt > root->info)
+        delete(root->right, elt);
+
+    else if(root->left != NULL && root->right != NULL) //node has two child
+    {
+        temp = find_min(root->right);
+        root->info = temp->info;
+        delete(root->right, root->info);
+    }
+    else
+    {
+        temp=root;
+        if(root->left==NULL)
+            root=root->right;
+        else if(root->right==NULL)
+            root=root->left;
+        free(temp);
+    }
+    return(temp);
 
 }
-void inOrder(bnode** root) {
 
+void search (bnode* root, int elt) {
+
+    if(root == NULL)
+        return 0;
+    else if(root->left == NULL)
+        return root;
+    else
+        return(find_min(root->left));
+
+}
+
+
+void preOrder(bnode *root)
+{
+    if(root!=NULL)
+    {
+        printf("%d", root->info);
+        preorder(root->left);
+        preorder(root->right);
+    }
+}
+
+
+void postOrder (bnode* root) {
+    if(root!=NULL)
+    {
+        postOrder(root->left);
+        postOrder(root->right);
+        printf("%d", root->info);
+    }
+}
+
+void inOrder(bnode* root) {
+
+    if(root!=NULL)
+    {
+        inOrder(root->left);
+        printf("%d", root->info);
+        inOrder(root->right);
+    }
 }
