@@ -19,13 +19,13 @@ public class interest {
              if( principal >= 100000) 
                  interest = principal * 0.07;
 
-             else if(principal >= 50000 && principal < 100000)
+             else if(principal >= 50000)
                  interest = principal * 0.05;
 
              else 
                  interest = principal * 0.03;
  
-             System.out.print("Interest amount: "+ interest);
+             System.out.print("Interest amount: "+ (float)interest);
  
         }
  
