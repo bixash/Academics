@@ -9,14 +9,14 @@ struct bnode {
     int info;
     struct bnode *left;
     struct bnode *right;
-
+ 
 };
 
 typedef struct bnode bnode;
 
 void insert(bnode*, int);
-void delete(bnode*, int);
-void search (bnode*, int);
+struct bnode delete(bnode*, int);
+int search (bnode*, int);
 void preorder (bnode*);
 void postorder (bnode*);
 void inorder(bnode*);
@@ -27,7 +27,7 @@ void main () {
     bnode *root = NULL;
     int elt;
     int choice;
-    
+    struct bnode del;
     while (1)
     {
         printf("\noptions are :\n1. insert\n2. delete\n3. search\n4. pre-order\n5. post-order\n6. in-order\n7. exit\n");
@@ -40,29 +40,30 @@ void main () {
             case 1: 
                 printf("\nEnter element to insert: ");
                 scanf("%d", &elt);
-                insert (&root, elt);
+                insert (root, elt);
                 break;
 
             case 2: 
-                delete(&root, elt);
+                del = delete(root, elt);
+                printf("%d deleted\n", del);
                 break;
 
             case 3: 
                 printf("\nEnter element you want to search: ");
                 scanf("%d", &elt);
-                search(&root, elt);
+                search(root, elt);
                 break;
 
             case 4: 
-                preorder (&root);
+                preorder (root);
                 break;
 
             case 5: 
-                postorder (&root);
+                postorder (root);
                 break;
 
             case 6: 
-                inorder(&root);
+                inorder(root);
                 break;
 
             case 7:
@@ -78,13 +79,7 @@ void main () {
 
 }
 
-// If node == NULL 
-//     return createNode(info)
-// if (info < node->info)
-//     node->left  = insert(node->left, info);
-// else if (info > node->info)
-//     node->right = insert(node->right, info);  
-// return node;
+
 
 void insert(bnode* root, int elt) {
 
@@ -106,6 +101,8 @@ void insert(bnode* root, int elt) {
 
 struct bnode *find_min(bnode *root)
 {
+
+    // Find the leftmost leaf
     if(root == NULL)
         return 0;
     else if(root->left == NULL)
@@ -113,8 +110,7 @@ struct bnode *find_min(bnode *root)
     else
         return(find_min(root->left));
 }
-
-void delete(bnode* root, int elt) {
+struct bnode delete(bnode* root, int elt) {
 
 
     struct bnode *temp;
@@ -142,11 +138,11 @@ void delete(bnode* root, int elt) {
             root=root->left;
         free(temp);
     }
-    return(temp);
+    return (temp);
 
 }
 
-void search (bnode* root, int elt) {
+int search (bnode* root, int elt) {
     if (root == NULL )
         return NULL;
     else if (elt == root->info)

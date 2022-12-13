@@ -9,6 +9,90 @@ struct node {
 };
 
 // Create a node
+struct node *newNode(int);
+
+// Insert a node
+struct node *insert(struct node *node, int key);
+
+// Find the inorder successor
+struct node *minValueNode(struct node *node);
+
+// Deleting a node
+struct node *deleteNode(struct node *root, int key);
+
+// Inorder Traversal
+void inorder(struct node *root);
+
+// Driver code
+int main() {
+  struct node *root = NULL;
+  int elt, choice, del;
+
+  while (1)
+    {
+        printf("\noptions are :\n1. insert\n2. delete\n3. search\n4. pre-order\n5. post-order\n6. in-order\n7. exit\n");
+        printf("\nEnter your choice: ");
+        scanf("%d", &choice);
+
+
+        switch (choice)
+        {
+            case 1: 
+                printf("\nEnter element to insert: ");
+                scanf("%d", &elt);
+                insert (root, elt);
+                break;
+
+            case 2: 
+                del = delete(root, elt);
+                printf("%d deleted\n", del);
+                break;
+
+            case 3: 
+                printf("\nEnter element you want to search: ");
+                scanf("%d", &elt);
+                search(root, elt);
+                break;
+
+            case 4: 
+                preorder (root);
+                break;
+
+            case 5: 
+                postorder (root);
+                break;
+
+            case 6: 
+                inorder(root);
+                break;
+
+            case 7:
+                exit(0);
+                break;
+            
+            default:
+                printf("Invalid choice");
+                break;
+        }
+    }
+  root = insert(root, 8);
+  root = insert(root, 3);
+  root = insert(root, 1);
+  root = insert(root, 6);
+  root = insert(root, 7);
+  root = insert(root, 10);
+  root = insert(root, 14);
+  root = insert(root, 4);
+
+  printf("Inorder traversal: ");
+  inorder(root);
+
+  printf("\nAfter deleting 10\n");
+  root = deleteNode(root, 10);
+  printf("Inorder traversal: ");
+  inorder(root);
+}
+
 struct node *newNode(int item) {
   struct node *temp = (struct node *)malloc(sizeof(struct node));
   temp->key = item;
@@ -84,25 +168,4 @@ struct node *deleteNode(struct node *root, int key) {
     root->right = deleteNode(root->right, temp->key);
   }
   return root;
-}
-
-// Driver code
-int main() {
-  struct node *root = NULL;
-  root = insert(root, 8);
-  root = insert(root, 3);
-  root = insert(root, 1);
-  root = insert(root, 6);
-  root = insert(root, 7);
-  root = insert(root, 10);
-  root = insert(root, 14);
-  root = insert(root, 4);
-
-  printf("Inorder traversal: ");
-  inorder(root);
-
-  printf("\nAfter deleting 10\n");
-  root = deleteNode(root, 10);
-  printf("Inorder traversal: ");
-  inorder(root);
 }
