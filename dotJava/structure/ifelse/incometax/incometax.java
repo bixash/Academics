@@ -20,14 +20,14 @@ public class incometax {
 
       if( income >= 40000) 
          tax = income * 0.2;
-      else if(income >= 20000 && income <= 39999)
+      else if(income >= 20000)
          tax = income * 0.15;
-      else if(income >= 10000 && income <= 19999)
+      else if(income >= 10000)
          tax = income * 0.1;
       else 
          tax = 0;
 
-      System.out.print("\nNet Salary: "+ (income-tax));
+      System.out.print("Net Salary: "+ (income-tax));
 
       }
    }

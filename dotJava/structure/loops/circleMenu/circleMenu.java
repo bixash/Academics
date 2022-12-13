@@ -5,7 +5,7 @@
 // d. Exit
 // Perform above task until the user wants to exit.
 
-package ifelse.circleMenu;
+package loops.circleMenu;
 import java.util.Scanner;
 public class circleMenu {
     public static void main(String[] args) {

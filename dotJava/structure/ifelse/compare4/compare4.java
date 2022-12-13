@@ -14,16 +14,16 @@ public class compare4 {
 
 
             if (a>b && b>c && c>d) {
-                System.out.println(+a+" is largest number!");
+                System.out.println(a+" is largest number!");
             }
              else if (b>a && a>c) {
-                System.out.println(+b+" is largest number!");
+                System.out.println(b+" is largest number!");
             }
              else if (c>a && a>d) {
-                System.out.println(+c+" is largest number!");
+                System.out.println(c+" is largest number!");
             }
              else if (d>a) {
-                System.out.println(+d+" is largest number!");
+                System.out.println(d+" is largest number!");
             }
             else {
                 System.out.println("\nAll are equal!");

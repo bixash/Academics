@@ -1,3 +1,5 @@
+// 13. Write a program to display number of days in a month using switch statement.
+
 package ifelse.month;
 import java.util.Scanner;
 public class month {
