@@ -138,7 +138,7 @@ struct bnode delete(bnode* root, int elt) {
             root=root->left;
         free(temp);
     }
-    return (temp);
+    // return (temp);
 
 }
 
