@@ -13,8 +13,6 @@ public class seven {
                 count++;
                 sum = sum + i;
             }
-
-            
             
         }
             System.out.println("\nIntegers greater than [100 - 200] that are divisible by 7 are:");

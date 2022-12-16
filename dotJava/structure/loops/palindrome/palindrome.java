@@ -16,49 +16,48 @@ public class palindrome {
             num = sc.nextInt();
 
 
-            while (num > 99999 || num < 9999) {
-                System.out.print("\nInvalid Integer!!\nPlease enter 5 digit integer: ");
-                num = sc.nextInt();
-            }
-            temp = num;
-            while (num > 0) {
+            // while (num > 99999 || num < 9999) {
+            //     System.out.print("\nInvalid Integer!!\nPlease enter 5 digit integer: ");
+            //     num = sc.nextInt();
+            // }
+            // temp = num;
+            // while (num > 0) {
     
-                rem = num % 10;
-                rev = rev * 10 + rem;
-                num = num / 10;
-                
-            }
-            if (temp == rev) {
-                System.out.println("\n"+temp+" is parlindrome!");
-            } 
-            else {
-                System.out.println("\n"+temp+" is not parlindrome!");
-            }
-            // while (true) {
-            //     if(num > 9999 && num < 99999)
-            //     {
-            //         temp = num;
-            //         while (num >0) {
-            
-            //             rem = num % 10;
-            //             rev = rev * 10 + rem;
-            //             num = num / 10;
-                        
-            //         }
-            //         if (temp == rev) {
-            //             System.out.println("\n"+temp+" is parlindrome!");
-            //         } 
-            //         else {
-            //             System.out.println("\n"+temp+" is not parlindrome!");
-            //         }
-            //         System.exit(0);
-            //     }
-            //     else {
-            //         System.out.print("\nInvalid Integer!!\nPlease enter 5 digit integer: ");
-            //         num = sc.nextInt();
-            //     }
+            //     rem = num % 10;
+            //     rev = rev * 10 + rem;
+            //     num = num / 10;
                 
             // }
+            // if (temp == rev) {
+            //     System.out.println("\n"+temp+" is parlindrome!");
+            // } 
+            // else {
+            //     System.out.println("\n"+temp+" is not parlindrome!");
+            // }
+            while (true) {
+                if(num > 9999 && num < 99999)
+                {
+                    temp = num;
+                    while (num > 0) {
+            
+                        rem = num % 10;
+                        rev = rev * 10 + rem;
+                        num = num / 10;
+                        
+                    }
+                    if (temp == rev) 
+                        System.out.println(temp+" is parlindrome!");
+                    else 
+                        System.out.println(temp+" is not parlindrome!");
+                    
+                    System.exit(0);
+                }
+                else {
+                    System.out.print("Invalid Integer!!\n\nPlease enter 5 digit integer: ");
+                    num = sc.nextInt();
+                }
+                
+            }
            
         }
 

@@ -1,4 +1,4 @@
-// Write a program to find the minimum and maximum among 10 numbers.
+//32. Write a program to find the minimum and maximum among 10 numbers.
 package array.minMax;
 import java.util.Scanner;
 public class minMax {

@@ -1,5 +1,8 @@
-package loops.reverse;
+// 23. Write a program to reverse the digits of a whole number. [Hint: Use modulus operator
+// to extract the last digit and integer division by 10 to get the n – 1 digit number from the
+// n digit number]
 
+package loops.reverse;
 import java.util.Scanner;
 
 public class reverse {

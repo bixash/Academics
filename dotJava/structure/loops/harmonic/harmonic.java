@@ -1,4 +1,4 @@
-// Write the program to determine the sum of the following harmonic series for a given
+// 20. Write the program to determine the sum of the following harmonic series for a given
 // value of n (input from command line).
 // 1 + 1/2 + 1/3 + 1/4 + … + 1/n.
 
