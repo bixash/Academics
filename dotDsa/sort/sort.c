@@ -5,12 +5,14 @@
 int a[] = {10, 2, 1, 4, 5, 3, 8, 7, 9, 6};
 int n = 10;
 
-void display(int a[],  int n) {
+void display( int arr[],  int n) {
 
     for( int i = 0; i < n; i++) {
         printf(" %d", a[i]);
     }
+    printf("\n");
 }
+
 
 void bubble (int[], int);
 void select (int[], int);
@@ -46,7 +48,7 @@ int main () {
 
 }
 
-void bubble (int a[], int n) {
+void bubble (int arr[], int n) {
     int temp;
     for (int i = 0; i < n-1; i++)
     {
@@ -59,35 +61,48 @@ void bubble (int a[], int n) {
                 temp = a[j];
                 a[j]= a[j+1];
                 a[j+1] = temp;
-
+                display(a, n);
             }
         }
         
     }
-    display(a, n);
+    // display(a, n);
 }
 
 
-void select(int a[], int n) {
-    int a, b , temp;
+void swap(int *a, int *b) 
+{
+  int temp = *a;
+  *a = *b;
+  *b = temp;
+}
 
-  for (int i = 0; i < n - 1; i++) {
-    int min = i; // let min be first element
-        for (int i = i + 1; i < n; i++) {
+
+void select(int arr[], int n) {
+    int temp;
+    // display(a, n);
+    for (int i = 0; i < n - 1; i++) 
+    {
+        int min = i; // let mininum always be first element
+        for (int j = i + 1; j < n; j++) 
+        {
             // Select the minimum element in each loop.
-            if (a[i] < a[min])
-                min = i;
+            if (a[min] > a[j])
+                min = j;
         }
         // put min at the correct position
-            int temp = a;
-            a = b;
-            b = temp;
+        // swap(&a[min], &a[i]);  // this function can be used
+        temp = a[min];
+        a[min] = a[i];
+        a[i] = temp;
+
+        display(a, n);
     }
-    display(a, n);
+    // display(a, n);
 }
 
 
-void insert(int a[], int n)
+void insert(int arr[], int n)
 {
     int i, key, j;
     for (i = 1; i < n; i++) {
@@ -102,7 +117,27 @@ void insert(int a[], int n)
             j = j - 1;
         }
         a[j + 1] = key;
+        display(a, n);
     }
 
-    display(a, n);
+    // display(a, n);
 }
+
+
+// SelectionSort(A)
+// { 
+//     int i, j, min, p, temp;
+//     for( i = 0;i < n ;i++)
+//     {
+//         min = a[i]; 
+//         p = i;
+//         for ( j = i + 1; j < n ;j++)
+//         {
+//             if (min > a[j])
+//                
+//                 min = a[j]; 
+//                 p=j;
+//         }
+//     }
+//     swap(a[i], a[p]);
+// }
