@@ -13,17 +13,18 @@ void display(int a[],  int n) {
 }
 
 void bubble (int[], int);
-
 void select (int[], int);
-
 void insert (int[], int);
 
 int main () {
 
     int choice; 
-
     while (1)
     {
+        printf("\nOptions are :\n1. Bubble\n2. Select\n3. Insert\n4. Exit");
+        printf("\nEnter your choice: ");
+        scanf("%d", &choice);
+
         switch (choice)
         {
         case 1: 
@@ -46,19 +47,16 @@ int main () {
 }
 
 void bubble (int a[], int n) {
-     
-
     int temp;
-
     for (int i = 0; i < n-1; i++)
     {
         for (int j = 0; j <n-i-1; j++)
         {
-            temp = a[j];
-            if(a[j] >= a[j+1]) 
-            {
-
-                
+            // temp = a[j];
+            if(a[j] >= a[j+1]) // comparing preceding element
+            {   
+                // swapping the element inside the bubble
+                temp = a[j];
                 a[j]= a[j+1];
                 a[j+1] = temp;
 
@@ -66,41 +64,45 @@ void bubble (int a[], int n) {
         }
         
     }
-    
     display(a, n);
 }
-void select (int a[], int n) {
-     
-    int i, j, temp, p, least;
-    for( i = 0; i < n -1; i++)
-    {
-        least = a[i];
-        p = i;
-    for (j = i + 1;j < n; j++)
-    {
-        if (a[j] < least)
-        least = a[j]; 
-        p=j;
+
+
+void select(int a[], int n) {
+    int a, b , temp;
+
+  for (int i = 0; i < n - 1; i++) {
+    int min = i; // let min be first element
+        for (int i = i + 1; i < n; i++) {
+            // Select the minimum element in each loop.
+            if (a[i] < a[min])
+                min = i;
+        }
+        // put min at the correct position
+            int temp = a;
+            a = b;
+            b = temp;
     }
-        
-    }
+    display(a, n);
 }
 
 
-void insert(int arr[], int n)
+void insert(int a[], int n)
 {
     int i, key, j;
     for (i = 1; i < n; i++) {
-        key = arr[i];
+        key = a[i];
         j = i - 1;
- 
-        /* Move elements of arr[0..i-1], that are
+
+        /* Move elements of a[0..i-1], that are
           greater than key, to one position ahead
           of their current position */
-        while (j >= 0 && arr[j] > key) {
-            arr[j + 1] = arr[j];
+        while (j >= 0 && a[j] > key) {
+            a[j + 1] = a[j];
             j = j - 1;
         }
-        arr[j + 1] = key;
+        a[j + 1] = key;
     }
+
+    display(a, n);
 }
