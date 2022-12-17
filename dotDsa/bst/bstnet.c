@@ -18,19 +18,24 @@ struct node *insert(struct node *node, int key);
 struct node *minValueNode(struct node *node);
 
 // Deleting a node
-struct node *deleteNode(struct node *root, int key);
+struct node *delete(struct node *root, int key);
+
+// Searching a node
+struct node *search(struct node *root, int elt);
 
 // Inorder Traversal
 void inorder(struct node *root);
+void preorder(struct node *root);
+void postorder(struct node *root);
 
-// Driver code
+
 int main() {
   struct node *root = NULL;
-  int elt, choice, del;
+  int choice, elt;
 
   while (1)
     {
-        printf("\noptions are :\n1. insert\n2. delete\n3. search\n4. pre-order\n5. post-order\n6. in-order\n7. exit\n");
+        printf("\nOptions are :\n1. insert\n2. delete\n3. search\n4. pre-order\n5. post-order\n6. in-order\n7. exit\n");
         printf("\nEnter your choice: ");
         scanf("%d", &choice);
 
@@ -40,18 +45,20 @@ int main() {
             case 1: 
                 printf("\nEnter element to insert: ");
                 scanf("%d", &elt);
-                insert (root, elt);
+                root = insert (root, elt);
+                
                 break;
 
             case 2: 
-                del = delete(root, elt);
-                printf("%d deleted\n", del);
+                root = delete(root, elt);
+                printf("%d deleted\n", root);
                 break;
 
             case 3: 
                 printf("\nEnter element you want to search: ");
                 scanf("%d", &elt);
-                search(root, elt);
+                root = search(root, elt);
+                printf("\nItem %d found", root->key);
                 break;
 
             case 4: 
@@ -75,39 +82,14 @@ int main() {
                 break;
         }
     }
-  root = insert(root, 8);
-  root = insert(root, 3);
-  root = insert(root, 1);
-  root = insert(root, 6);
-  root = insert(root, 7);
-  root = insert(root, 10);
-  root = insert(root, 14);
-  root = insert(root, 4);
-
-  printf("Inorder traversal: ");
-  inorder(root);
-
-  printf("\nAfter deleting 10\n");
-  root = deleteNode(root, 10);
-  printf("Inorder traversal: ");
-  inorder(root);
 }
 
+// Create a node
 struct node *newNode(int item) {
   struct node *temp = (struct node *)malloc(sizeof(struct node));
   temp->key = item;
   temp->left = temp->right = NULL;
   return temp;
-}
-
-// Inorder Traversal
-void inorder(struct node *root) {
-  if (root != NULL) {
-    
-    inorder(root->left);
-    printf("%d -> ", root->key);
-    inorder(root->right);
-  }
 }
 
 // Insert a node
@@ -136,15 +118,15 @@ struct node *minValueNode(struct node *node) {
 }
 
 // Deleting a node
-struct node *deleteNode(struct node *root, int key) {
+struct node *delete(struct node *root, int key) {
   // Return if the tree is empty
   if (root == NULL) return root;
 
   // Find the node to be deleted
   if (key < root->key)
-    root->left = deleteNode(root->left, key);
+    root->left = delete(root->left, key);
   else if (key > root->key)
-    root->right = deleteNode(root->right, key);
+    root->right = delete(root->right, key);
 
   else {
     // If the node is with only one child or no child
@@ -165,7 +147,54 @@ struct node *deleteNode(struct node *root, int key) {
     root->key = temp->key;
 
     // Delete the inorder successor
-    root->right = deleteNode(root->right, temp->key);
+    root->right = delete(root->right, temp->key);
   }
   return root;
+}
+
+// Searching a node 
+struct node *search(struct node *root, int elt) {
+  if (root == NULL ){
+    printf("\nItem not found!\n");
+    // return root;
+  }
+  else if (elt == root->key)
+    return root;
+  else if (elt < root->key)
+    return search(root->left, elt);
+  else 
+    return search(root->right, elt);
+
+}
+
+// Inorder Traversal
+void inorder(struct node *root) {
+  if (root != NULL) {
+    
+    inorder(root->left);
+    printf("%d -> ", root->key);
+    inorder(root->right);
+  }
+}
+
+void preorder(struct node *root) {
+  if (root != NULL) {
+    
+    
+    printf("%d -> ", root->key);
+    preorder(root->left);
+    preorder(root->right);
+  }  
+
+}
+
+void postorder(struct node *root) {
+   if (root != NULL) {
+    
+    postorder(root->left);
+    postorder(root->right);
+    printf("%d -> ", root->key);
+  }
+
+
 }
