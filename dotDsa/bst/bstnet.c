@@ -46,12 +46,14 @@ int main() {
                 printf("\nEnter element to insert: ");
                 scanf("%d", &elt);
                 root = insert (root, elt);
-                
                 break;
 
             case 2: 
+                inorder(root);
+                printf("\nEnter item you want delete: ");
+                scanf("%d", &elt);
                 root = delete(root, elt);
-                printf("%d deleted\n", root);
+                printf("\n%d  deleted!", elt);
                 break;
 
             case 3: 
@@ -120,7 +122,11 @@ struct node *minValueNode(struct node *node) {
 // Deleting a node
 struct node *delete(struct node *root, int key) {
   // Return if the tree is empty
-  if (root == NULL) return root;
+  if (root == NULL) {
+    printf("\nEmpty tree! ");
+    return root;
+  }
+    
 
   // Find the node to be deleted
   if (key < root->key)
@@ -175,16 +181,18 @@ void inorder(struct node *root) {
     printf("%d -> ", root->key);
     inorder(root->right);
   }
+  
+  
 }
 
 void preorder(struct node *root) {
   if (root != NULL) {
     
-    
     printf("%d -> ", root->key);
     preorder(root->left);
     preorder(root->right);
   }  
+ 
 
 }
 
@@ -195,6 +203,6 @@ void postorder(struct node *root) {
     postorder(root->right);
     printf("%d -> ", root->key);
   }
-
-
+  
+  
 }
