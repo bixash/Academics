@@ -9,11 +9,9 @@ public class sumElem {
 
          try(Scanner scan = new Scanner(System.in)){
 
-          
-            int a[][] = new int[10][10];
-            int i,j, sum = 0;
             int m = 3, n= 3;
-        
+            int a[][] = new int[3][3];
+            int i,j, sum = 0;
 
             System.out.print("\nEnter elements for matrix 3X3: \n");
             for(i=0; i<m; i++) {
@@ -26,28 +24,15 @@ public class sumElem {
             }
 
 
-            System.out.print("\nElements of matrix first: \n");
+            System.out.print("\nSo, the 3X3 matrix is: \n");
             for(i=0; i<m; i++) {
-
                 for(j=0; j<n; j++) {
-
                     System.out.print(a[i][j]+"\t");
-                    
+                    sum = sum + a[i][j];
                 }
                 System.out.print("\n");
             }
-            
-
-            for(i=0; i<m; i++) {
-
-                for(j=0; j<n; j++) {
-
-                    sum = sum + a[i][j];
                     
-                }
-               
-            }
-
             System.out.print("\nSum of all elements: "+ sum +"\n");
          
         }

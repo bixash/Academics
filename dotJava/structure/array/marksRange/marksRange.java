@@ -9,7 +9,6 @@ package array.marksRange;
 import java.util.Scanner;
 public class marksRange {
     
-
     public static void main(String[] args) {
         
         int excel= 0, great=0, good=0, meh=0;
@@ -43,14 +42,13 @@ public class marksRange {
                 System.out.print(marks[i]+" ");
 
             }
-
              //check the conditions
             for( i=0; i<20; i++) {
                 if(marks[i]>= 81 && marks[i]<=100)
                     excel++;
-                else if (marks[i]>= 61 && marks[i]<= 80)
+                else if (marks[i]>= 61)
                     great++;
-                else if (marks[i]>= 41 && marks[i]<= 60)
+                else if (marks[i]>= 41)
                     good++;
                 else 
                     meh++;

@@ -25,8 +25,8 @@ public class minMax {
                
             }
             
-            max = a[0];
-            min = a[0];
+            max = min = a[0];
+           
             for(i=0; i<10; i++) {
                
                 if (max < a[i]){

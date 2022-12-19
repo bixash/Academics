@@ -5,16 +5,15 @@ public class trans {
     public static void main(String[]args) {
 
         try(Scanner scan = new Scanner(System.in)){
-
          
-           int a[][] = new int[10][10];
-           int i,j;
            
-            
+           int i,j;
+
            System.out.print("\nEnter row and column of matrix: \n");
            int m = scan.nextInt();
            int n = scan.nextInt();
-
+           
+           int a[][] = new int[m][n];
 
            System.out.print("\nEnter elements for matrix: \n");
            for(i=0; i<m; i++) {

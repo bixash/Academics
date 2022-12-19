@@ -1,56 +1,30 @@
-
 // 33. Write a program to add elements stored in odd indices in an array of integer.
 
 package array.oddIndex;
-import java.util.Scanner;
 public class oddInd {
 
     public static void main(String[]args) {
 
-        try(Scanner scan = new Scanner(System.in)){
+        int i, sum = 0;
+        int a[]= {1,2,3,4,5,6,7,8,9,10};
 
-         
-           int a[] = new int[20];
-           int i;
-           
-           
+        System.out.print("\nElements of Array: \n");
+
+        for(i=0; i<a.length; i++) 
+            System.out.print(a[i]+" ");
             
-           System.out.println("\nEnter size of array: ");
-           int m = scan.nextInt();
-          
+        System.out.print("\n");
+        System.out.print("\nOdd indices elements are: \n");
 
-
-           System.out.println("\nEnter elements for Array: ");
-           for(i=0; i<m; i++) {
-
-                a[i]= scan.nextInt();
-                   
-           }
-
-
-           System.out.print("\nElements of Array: \n");
-           for(i=0; i<m; i++) {
-
-               System.out.print(a[i]+"\t");
-              
-              
-           }
-
-
-           System.out.print("\n");
-           System.out.print("\nOdd indices elements are: \n");
-
-           for(i=0; i<m; i++) {
-              
-                if(i%2 != 0)
-                    System.out.print(a[i]+"\t");
-                
-           }
-           System.out.print("\n");
-        
-       }
-
-       
-   }
+        for(i=0; i<a.length; i++) {
+            
+            if(i%2 != 0){
+                System.out.print(a[i]+" ");
+                sum= sum + a[i];
+            }
+        }
+        System.out.print("\n");
+        System.out.println("\nSum: "+sum);
+    }
     
 }
