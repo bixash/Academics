@@ -26,12 +26,13 @@ public class sumRow {
 
            System.out.print("\nSo, the 4x4 matrix is: \n");
             for(i=0; i<m; i++) {
-
-                for(j=0; j<n; j++) 
-
-                   System.out.print(a[i][j]+"\t");
-               
+                // sum = 0;
+                for(j=0; j<n; j++) {
+                    // sum = sum + a[i][j];
+                    System.out.print(a[i][j]+"\t");
+                }
                 System.out.print("\n");
+                
             }
            
         //    sum of 1st row = 00 01 02 03
@@ -40,12 +41,11 @@ public class sumRow {
                 for(j=0; j<n; j++) 
                     sum = sum + a[i][j];
     
-                System.out.println("\nSum of "+ (i+1) +" row : "+sum);
+                System.out.print("\nSum of "+ (i+1) +" row : "+sum);
               
             }
         
        }
-
        
    }
     
