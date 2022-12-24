@@ -6,7 +6,7 @@ public class multi {
 
     public static void main(String[]args) {
 
-        // char charArray2D[][] = {{'a', 'b', 'c'}, {'d', 'e', 'f'}};
+        // char charArray2D[][] = {{'a', 'b', 'c'},{'d', 'e', 'f'}};
         int a[][] ={{1, 3 ,4}, {5, 6, 6}};
         int r1 = 2;
         int c1 = 3;
@@ -59,7 +59,6 @@ public class multi {
 
             System.out.print("\nMatrix multiplication AXB: \n");
             for(i=0; i<r1; i++) {
-
                 for(j=0; j<c2; j++) {
                     
                     c[i][j]=0;
@@ -69,17 +68,12 @@ public class multi {
                     System.out.print(c[i][j]+"\t");
                     
                 }
-
                 System.out.println();
-                
             }
 
         }
         else 
             System.out.print("\nMatrices cannot be multiplied.\n");
-          
-        
-       
    }
     
 }
