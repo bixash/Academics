@@ -26,7 +26,7 @@ class Circle {
     // return (float)(radius *radius* Math.PI);
     // }
 
-    public float findCricumference() {
+    public float findCircumference() {
         return (float) (2 * radius * Math.PI);
     }
 }
@@ -39,8 +39,9 @@ public class MyCircle {
         Circle c1 = new Circle(5);
 
         System.out.println("Area: " + c1.findArea());
-        System.out.println("Circumference: " + c1.findCricumference());
+        System.out.println("Circumference: " + c1.findCircumference());
 
     }
 
 }
+
