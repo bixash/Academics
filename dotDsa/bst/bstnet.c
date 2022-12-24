@@ -140,7 +140,8 @@ struct node *delete(struct node *root, int key) {
         struct node *temp = root->right;
         free(root);
         return temp;
-    } else if (root->right == NULL) {
+    } 
+    else if (root->right == NULL) {
         struct node *temp = root->left;
         free(root);
         return temp;
