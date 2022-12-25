@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sales SYSTEM "sales.dtd">
+
+<sales>
+    <salesman>
+        <name>
+            <first></first>
+            <middle></middle>
+            <last></last>
+            
+        </name>
+        <phone></phone>
+        <area></area>
+        <records>
+            <record>
+                <product>
+                    <sku></sku>
+                    <product_name></product_name>
+                </product>
+                <quantity></quantity>
+                <price></price>
+                <date></date>
+            </record>
+            
+        </records>
+    </salesman>
+
+</sales>

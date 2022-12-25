@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="xslt.xsl" type="text/xsl"?>
+<store>
+    <book id="2362379">
+        
+        <bookname>XSLT</bookname>
+        <authorname>sbudui</authorname>
+        <publisher>jkssd</publisher>
+        <price>$69</price>
+        <edition>1st</edition>
+
+    </book>
+    <book id="2362379">
+        
+        <bookname>XSLT</bookname>
+        <authorname>effw</authorname>
+        <publisher>fe</publisher>
+        <price>fwe</price>
+        <edition>eef23</edition>
+ 
+    </book>
+</store>

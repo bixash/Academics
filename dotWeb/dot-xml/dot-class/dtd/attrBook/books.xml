@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bookstore>
+    <book category="fictional">
+        <title lang="en">Italian</title>
+        <author>Yiade aurents</author>
+        <year>2025</year>
+        <price>390.00</price>
+    </book>
+
+    <book category="fictional">
+        <title lang="en">Every Italian</title>
+        <author>Giada De Laurentis</author>
+        <year>2010</year>
+        <price>30.00</price>
+    </book>
+
+    <book category="fictional">
+        <title lang="en">Order</title>
+        <author>Malena</author>
+        <year>2015</year>
+        <price>30.00</price>
+    </book>
+
+    <book category="fictional">
+        <title lang="en">12 rules of life</title>
+        <author>Jordan Peterson</author>
+        <year>2018</year>
+        <price>300.00</price>
+    </book>
+</bookstore>

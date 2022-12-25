@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE books SYSTEM "attrBook.dtd">
+<books>
+    <book bookid="78743">
+        <title>12 rules of life</title>
+        <author title="ms">
+            <name>
+                <first>Dr.</first>
+                <middle>Jordan</middle>
+                <last>Peterson</last>
+            </name>
+            
+        </author>
+        <ISBN>162623930</ISBN>
+        <publisher> Wiener </publisher>
+        <edition>1st</edition>
+        <price currency="npr"> 450 </price>
+
+
+    </book>
+
+</books>
+
+
+
+<!-- 
+    1. title of the book
+    2. multiple author name with details (First, middle, last) name
+    3. ISBN number 
+    4. publisher name
+    5. edition
+    6.price
+    7. book with id attribute
+    8. Author has title attribute with (mr, ms, mrs) value and default ms
+    9.Price has currency attribute with default value "npr"
+-->

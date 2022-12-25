@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<schools
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:noNamespaceSchemaLocation="school.xsd">>
+    <school id= "">
+        <staff id="">
+            <name ></name>
+            <title></title>
+            <category></category>
+            <address>
+                <street></street>
+                <suburb></suburb>
+                <postcode></postcode>
+            </address>
+        </staff>
+        <name></name>
+        <location></location>
+        <subjects id="">
+            <name></name>
+            <description></description>
+        </subjects>
+    </school>
+
+</schools>

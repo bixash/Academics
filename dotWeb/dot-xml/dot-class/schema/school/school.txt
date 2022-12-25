@@ -1,0 +1,17 @@
+You are required to store information regarding “School” in a university. 
+The documents are in XML format. Each school will have one unique school id. 
+You also need the name and the locations of the school. A school has a collection of staff. 
+This staff needs to be implemented as a complex type. A staff needs one unique staff id. 
+In addition, you also need to store the staff name, title, and category. 
+While staff name has to exist, the title can be left blank. 
+The staff category can only be chosen from “academic”, “general”, or “technical”.
+For each staff you need to store the address. This address need to be implemented as another complex type. 
+The street, suburb and postcode have to be kept in a certain order. A staff can have at least one address, but s/he can have many addresses recorded. 
+A school also offers a collection of subjects.
+Each subject has a unique subject code. It also has a name, description, and capacity. 
+A subject will be cancelled if the capacity is less than 6 students, 
+and the possible maximum capacity for any given subject is 400 due to the maximum capacity of available lecture hall. 
+A subject will be taught by at least one staff. 
+You need to ensure that this information refers to a staff in that school.
+
+

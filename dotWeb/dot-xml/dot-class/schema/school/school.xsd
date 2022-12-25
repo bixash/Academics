@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+        
+
+        <xsd:element name="School">
+            <xsd:complexType>
+                <xsd:sequence>
+                    <xsd:element name="SchoolName" type="xsd:string" />
+                    <xsd:element name="SchoolLocation" type="xsd:string" maxOccurs="unbounded" />
+                    <xsd:element name="Staff" maxOccurs="unbounded" type="StaffType" />
+                    <xsd:element name="Subject" maxOccurs="unbounded" type="SubjectType" />
+                </xsd:sequence>
+                <xsd:attribute name="SchoolID" type="xsd:ID" use="required" />
+            </xsd:complexType>
+        </xsd:element>
+        
+        <xsd:complexType name="StaffType">
+            <xsd:sequence>
+                <xsd:element name="StaffName" type="xsd:string" />
+                <xsd:element name="StaffTitle" type="xsd:string" minOccurs="0" />
+                <xsd:element name="StaffCategory">
+                    <xsd:simpleType>
+                        <xsd:restriction base= "xsd:string">
+                            <xsd:enumeration value= "Academic" />
+                            <xsd:enumeration value= "General" />
+                            <xsd:enumeration value= "Technical" />
+                        </xsd:restriction>
+                    </xsd:simpleType>
+                </xsd:element>
+                <xsd:element name="Address" type="AddressType" maxOccurs="unbounded" />
+            </xsd:sequence>
+            <xsd:attribute name="StaffID" type="xsd:ID" use="required" />
+        </xsd:complexType>
+        <xsd:complexType name="AddressType">
+            <xsd:sequence>
+                <xsd:element name="Street" type="xsd:string" />
+                <xsd:element name="Suburb" type="xsd:string" />
+                <xsd:element name="Postcode" type="xsd:integer" />
+            </xsd:sequence>
+        </xsd:complexType>
+        <xsd:complexType name="SubjectType">
+            <xsd:sequence>
+                <xsd:element name="SubjName" type="xsd:string" />
+                <xsd:element name="SubjDesc" type="xsd:string" />
+                <xsd:element name= "SubjCapacity">
+                    <xsd:simpleType>
+                        <xsd:restriction base= "xsd:integer">
+                            <xsd:minInclusive value= "6" />
+                            <xsd:maxInclusive value= "400" />
+                        </xsd:restriction>
+                    </xsd:simpleType>
+                </xsd:element>
+                <xsd:element name="Staff-Ref">
+                    <xsd:complexType>
+                        <xsd:attribute name="ref" type="xsd:IDREF" use="required" />
+                    </xsd:complexType>
+                </xsd:element>
+            </xsd:sequence>
+            <xsd:attribute name="SubjCode" type="xsd:ID" use="required" />
+        </xsd:complexType>
+    
+</xsd:schema>
+
+    

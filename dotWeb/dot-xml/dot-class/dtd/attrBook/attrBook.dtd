@@ -1,0 +1,17 @@
+<!ELEMENT books (book+)>
+<!ELEMENT book (title, author+, ISBN, publisher, edition, price?)>
+    <!ATTLIST book bookid CDATA #REQUIRED>
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT author (name+)>
+    <!ATTLIST author title (mr|mrs|ms) "ms">
+<!ELEMENT name (first, middle?, last)>
+<!ELEMENT first (#PCDATA)> 
+<!ELEMENT middle (#PCDATA)> 
+<!ELEMENT last (#PCDATA)> 
+<!ELEMENT ISBN (#PCDATA)>
+<!ELEMENT publisher (#PCDATA)>
+<!ELEMENT edition (#PCDATA)>
+<!ELEMENT price (#PCDATA)>
+    <!ATTLIST price currency CDATA  "npr">
+
+

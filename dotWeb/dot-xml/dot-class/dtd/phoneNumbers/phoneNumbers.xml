@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE phoneNumbers [
+    <!ELEMENT phoneNumbers (title, entries)>
+    <!ELEMENT title (#PCDATA)> 
+    <!ELEMENT entries (entry*)> 
+    <!ELEMENT entry (name, phone, city?)> 
+    <!ELEMENT name (first, middle?, last)>
+    <!ELEMENT first (#PCDATA)> 
+    <!ELEMENT middle (#PCDATA)> 
+    <!ELEMENT last (#PCDATA)> 
+    <!ELEMENT phone (#PCDATA)>
+    <!ELEMENT city (#PCDATA)>
+    
+]>
+<phoneNumbers>
+    <title>Phonebook</title>
+    <entries>
+        <entry>
+            <name>
+                <first>Kritika</first>
+                <middle>Rajya laxmi</middle>
+                <last>Shah</last>
+
+            </name>
+
+            <phone>+977 9860783944</phone>
+            <city>Durbarsquare</city>
+
+        </entry>
+        <entry>
+            <name>
+                <first>moneey</first>
+              
+                <last></last>
+
+            </name>
+
+            <phone>29u98u298u2</phone>
+            <city>eiiff</city>
+
+        </entry>
+
+    </entries>
+</phoneNumbers>

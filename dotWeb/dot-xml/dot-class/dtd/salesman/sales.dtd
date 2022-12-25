@@ -1,0 +1,16 @@
+<!ELEMENT sales (salesman+)>
+<!ELEMENT salesman (name, phone, area, records)>
+<!ELEMENT name (first, middle?, last)>
+<!ELEMENT first (#PCDATA)>
+<!ELEMENT middle (#PCDATA)>
+<!ELEMENT last (#PCDATA)>
+<!ELEMENT phone (#PCDATA)>
+<!ELEMENT area (#PCDATA)>
+<!ELEMENT records (record+)>
+<!ELEMENT record (product, quantity, price, date)>
+<!ELEMENT product (sku, product_name)>
+<!ELEMENT sku (#PCDATA)>
+<!ELEMENT product_name (#PCDATA)>
+<!ELEMENT quantity (#PCDATA)>
+<!ELEMENT price (#PCDATA)>
+<!ELEMENT date (#PCDATA)>
