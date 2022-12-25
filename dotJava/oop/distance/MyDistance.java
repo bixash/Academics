@@ -2,8 +2,8 @@
 // float, suitable constructors, and two methods addDistance and compareDistance for
 // adding and comparing two distance objects. Write a separate class MyDistance
 // containing main method to create use distance objects. 
-package oop.distance;
 
+package oop.distance;
 
 class Distance {
     private int feet;
