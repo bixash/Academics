@@ -18,10 +18,21 @@ class Distance {
         this.inches = inches;
     }
 
-    public float addDistance() {
-        return (feet + inches);
+    public Distance addDistance(Distance d) {
+        Distance dd = new Distance();
+        dd.feet = feet + d.feet;
+        dd.inches = inches + d.inches;
+        if(dd.inches >= 12)
+        {
+            dd.feet += 1;
+            dd.inches -= 12;  
+        }
+        return dd;
     }
-    public float compareDistance() {
+    public void compareDistance(Distance d) {
+        if(feet > d.feet)
+        else if(feet < d.feet)
+        
         return (feet + inches);
     }
 

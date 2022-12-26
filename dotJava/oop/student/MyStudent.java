@@ -7,7 +7,7 @@ package oop.student;
 class Student {
     public String name;
     public int roll;
-    public int[] marks; 
+    public int[]marks = new int[5]; 
 
     public Student () {
 
