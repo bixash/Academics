@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<!-- 5. Write a valid xml to validate following details.
+a. Validate record of students with (name, email, phone, address, age)
+b. Name have first name, middle name and last name.
+c. Address have permanent is required and temporary address is
+optional.
+d. And highest age limit is 125. -->
+
+<student xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="students.xsd">
+    <name>
+        <first></first>
+        <middle></middle>
+        <last></last>
+    </name>
+
+    <email></email>
+    <phone></phone>
+    <address>
+        <permanent></permanent>
+        <temporary></temporary>
+    </address>
+    <age>125</age>
+
+</student>

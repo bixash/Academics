@@ -1,0 +1,37 @@
+<xs:schema xmlns:xs ="http://www.w3.org/2001/XMLSchema">
+<xs:element name="student">
+  
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="name" type="nameType"></xs:element>
+                <xs:element name="email" type="xs:string"></xs:element>
+                <xs:element name="phone" type="xs:string"></xs:element>
+                <xs:element name="address" type="addressType"></xs:element>
+                <xs:element name="age" type="ageType"></xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:complexType name="nameType">
+        <xs:sequence>
+            <xs:element name="first" type="xs:string"></xs:element>
+            <xs:element name="middle" type="xs:string"></xs:element>
+            <xs:element name="last" type="xs:string"></xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="addressType">
+        <xs:sequence>
+            <xs:element name="permanent" type="xs:string" minOccurs="1"></xs:element>
+            <xs:element name="temporary" type="xs:string" minOccurs="0"></xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:simpleType name="ageType">
+        <xs:restriction base="xs:integer">
+            <xs:minInclusive value="0"/>
+            <xs:maxInclusive value="150"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+</xs:schema>
