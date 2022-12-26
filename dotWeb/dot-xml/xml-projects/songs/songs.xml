@@ -24,12 +24,7 @@
         <compose></compose>
         <length></length>
     </song>
-    <song>
-        <name></name>
-        <singer></singer>
-        <compose></compose>
-        <length></length>
-    </song>
+    
 </songs>
 <!-- 3. Write XML code to store at least four songs with details (name, singer,
 compose by, length). -->
