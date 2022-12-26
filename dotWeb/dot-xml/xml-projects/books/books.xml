@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 4. Write a valid xml to validate following details.
+a. Validate record of books with (name, author, pageno, price)
+b. Name have first name, middle name and last name.
+c. Author can be multiple
+d. And highest price limit is 600.
+e. Book have isbn as an attribute -->
+
+
+<books xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="books.xsd">
+    <book isbn="12">
+        <name></name>
+        <author>
+            <first></first>
+            <middle></middle>
+            <last></last>
+        </author>
+        <author>
+            <first></first>
+            <middle></middle>
+            <last></last>
+        </author>
+        <page>609</page>
+        <price>600</price>
+    </book>
+</books>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<songs xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="songs.xsd">
+    <song>
+        <name>hnnh</name>
+        <singer>hnffhn</singer>
+        <compose>hf</compose>
+        <length>hfh</length>
+    </song>
+    <song>
+        <name>hfhf</name>
+        <singer></singer>
+        <compose></compose>
+        <length></length>
+    </song>
+    <song>
+        <name></name>
+        <singer></singer>
+        <compose></compose>
+        <length></length>
+    </song>
+    <song>
+        <name></name>
+        <singer></singer>
+        <compose></compose>
+        <length></length>
+    </song>
+    <song>
+        <name></name>
+        <singer></singer>
+        <compose></compose>
+        <length></length>
+    </song>
+</songs>
+<!-- 3. Write XML code to store at least four songs with details (name, singer,
+compose by, length). -->
