@@ -1,0 +1,48 @@
+oceans {
+    /* font-family: Arial; */
+    
+    /* width: 100%; */
+    display: block;
+    margin: 2em 1em;
+    border: 4px solid #ccddff;
+    padding: 0px 1em;
+    
+}
+
+oceans:before {
+    display: block;
+    margin:-20px 0px 20px 0px;
+    width: 160px;
+    font-weight: bold;
+    font-size: 30px;
+    content: "Oceans";
+    padding: .2em .20em;
+    background-color: #ccddff;
+    text-align: center;
+}
+
+    
+
+ocean {
+    display: block;
+    margin-bottom: 1em;
+}
+name, area, depth {
+    display: block;
+}
+name {
+    font-size: 22px;
+    font-weight: bold;
+}
+area::before {
+    content: "Area: ";
+}
+area::after {
+    content: " million km\B2";
+}
+depth::before {
+    content: "Mean Depth: ";
+}
+depth::after {
+    content: "m";
+}

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="welcome.xsl" type="text/xsl"?>
+<course>
+    <subject>
+        <subname>Algorithm</subname>
+        <one>Greedy algo</one>
+        <two>Randomised algo</two>
+        <three>Searching</three>
+        <four>Sorting</four>
+    </subject>
+    <subject> 
+        <subname>Data Structures</subname>
+        <one>Array</one>
+        <two>Stack</two>
+        <three>Queue</three>
+        <four>Linked List</four>
+    </subject>
+    <subject> 
+        <subname>Web Technology</subname>
+        <one>HTML</one>
+        <two>CSS</two>
+        <three>Javascript</three>
+        <four>Php</four>
+    </subject>
+    <subject> 
+        <subname>Languages</subname>
+        <one>C/C++</one>
+        <two>Java</two>
+        <three>Python</three>
+        <four>Ruby</four>
+    </subject>
+    <subject> 
+        <subname>DBMS</subname>
+        <one>Basics</one>
+        <two>ER Diagram</two>
+        <three>Normalization</three>
+        <four>Transaction Concepts</four>
+    </subject>
+</course>

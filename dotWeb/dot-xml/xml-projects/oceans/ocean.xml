@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/css" href="style.css"?>
+<oceans>
+    <ocean>
+        <name>Artic</name>
+        <area>13,000</area>
+        <depth>1,200</depth>
+    </ocean>
+    <ocean>
+        <name>Atlantic</name>
+        <area>87,000</area>
+        <depth>3,200</depth>
+    </ocean>
+    <ocean>
+        <name>Pacific</name>
+        <area>13,000</area>
+        <depth>1,200</depth>
+    </ocean>
+    <ocean>
+        <name>Indian</name>
+        <area>180,000</area>
+        <depth>1,200</depth>
+    </ocean>
+    <ocean>
+        <name>Southern</name>
+        <area>93,000</area>
+        <depth>4,200</depth>
+    </ocean>
+</oceans>
