@@ -1,0 +1,39 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="books">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="book">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="name" type="xs:string"></xs:element>
+                            <xs:element name="author" type="nameType" maxOccurs="unbounded"></xs:element>
+                            <xs:element name="isbn" type="xs:long"></xs:element>
+                            <xs:element name="publisher" type="xs:string"></xs:element>
+                            <xs:element name="edition" type="xs:integer"></xs:element>
+                            <xs:element name="price" type="priceType"></xs:element>
+                        </xs:sequence>
+                        <xs:attribute name="id" type="xs:string" use="required"></xs:attribute>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:complexType name="nameType">
+        <xs:sequence>
+            <xs:element name="first" type="xs:string"></xs:element>
+            <xs:element name="middle" type="xs:string"></xs:element>
+            <xs:element name="last" type="xs:string"></xs:element>
+        </xs:sequence>
+        <xs:attribute name="title" type="xs:string" default="ms"></xs:attribute>
+    </xs:complexType>
+
+    <xs:complexType name="priceType">
+        <xs:simpleContent>
+            <xs:extension base="xs:integer">
+                <xs:attribute name="currency" type="xs:string" default="npr"></xs:attribute>
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+
+</xs:schema>

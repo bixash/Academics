@@ -1,16 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet xmlns:xsl ="http://www.w3.org/1999/XSL/Transform" version="2.0">
 
-    <xsl:template match="/">
+    <xsl:template match = "/">
         <html>
             <body>
-                <h2 bgcolor="#f2f2f2">Hello Everyone! Welcome to XML to CSS</h2>
+                <h2 bgcolor="#f90">Hello Everyone! Welcome to XML to CSS</h2>
                 
-                <xsl:for-each select="course/subject">
-                    <div bgcolor = "#cd8932">
+                <div bgcolor="#232323" display="block" margin-bottom="10px">
+                    <xsl:for-each select="course/subject">
+                    <div bgcolor = "#cd8932" >
                         <div>
                             <xsl:value-of select="subname"></xsl:value-of>
                         </div>
+
                         <div>
                             <xsl:value-of select="one"></xsl:value-of>
                         </div>
@@ -31,6 +33,9 @@
                     </div>
                     
                 </xsl:for-each>
+
+                </div>
+                
             </body>
         </html>
 
