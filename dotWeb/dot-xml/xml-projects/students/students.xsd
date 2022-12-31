@@ -1,6 +1,5 @@
 <xs:schema xmlns:xs ="http://www.w3.org/2001/XMLSchema">
 <xs:element name="student">
-  
         <xs:complexType>
             <xs:sequence>
                 <xs:element name="name" type="nameType"></xs:element>
@@ -30,7 +29,7 @@
     <xs:simpleType name="ageType">
         <xs:restriction base="xs:integer">
             <xs:minInclusive value="0"/>
-            <xs:maxInclusive value="150"/>
+            <xs:maxInclusive value="125"/>
         </xs:restriction>
     </xs:simpleType>
 

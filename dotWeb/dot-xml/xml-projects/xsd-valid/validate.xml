@@ -1,5 +1,4 @@
 <?xml version="1.0"?>
 <students xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="validate.xsd">
-    <student regid="1" firstName="Rajani" lastName="Thapa"
-        age="23" university="TU"/>
+    <student regid="1" firstName="Rajani" lastName="Thapa" age="23" university="TU"/>
 </students>

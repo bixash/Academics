@@ -8,13 +8,7 @@
                             <xs:element name="name" type="xs:string"></xs:element>
                             <xs:element name="author" type="nameType" maxOccurs="unbounded"></xs:element>
                             <xs:element name="page" type="xs:integer"></xs:element>
-                            <xs:element name="price">
-                                <xs:simpleType>
-                                    <xs:restriction base="xs:integer">
-                                        <xs:maxInclusive value="600"></xs:maxInclusive>
-                                    </xs:restriction>
-                                </xs:simpleType>
-                            </xs:element>
+                            <xs:element name="price" type="priceTag"></xs:element>
                         </xs:sequence>
                         <xs:attribute name="isbn" type="xs:string" use="required"></xs:attribute>
                     </xs:complexType>
@@ -31,4 +25,11 @@
         </xs:sequence>
     </xs:complexType>
 
+
+    <xs:simpleType name="priceTag">
+        <xs:restriction base="xs:integer">
+            <xs:maxInclusive value="600"></xs:maxInclusive>
+        </xs:restriction>
+    </xs:simpleType>
+    
 </xs:schema>

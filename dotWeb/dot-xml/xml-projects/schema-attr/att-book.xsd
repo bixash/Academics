@@ -7,10 +7,10 @@
                         <xs:sequence>
                             <xs:element name="name" type="xs:string"></xs:element>
                             <xs:element name="author" type="nameType" maxOccurs="unbounded"></xs:element>
-                            <xs:element name="isbn" type="xs:long"></xs:element>
+                            <xs:element name="isbn" type="isbnType"></xs:element>
                             <xs:element name="publisher" type="xs:string"></xs:element>
                             <xs:element name="edition" type="xs:integer"></xs:element>
-                            <xs:element name="price" type="priceType"></xs:element>
+                            <xs:element name="price"></xs:element>
                         </xs:sequence>
                         <xs:attribute name="id" type="xs:string" use="required"></xs:attribute>
                     </xs:complexType>
@@ -25,8 +25,25 @@
             <xs:element name="middle" type="xs:string"></xs:element>
             <xs:element name="last" type="xs:string"></xs:element>
         </xs:sequence>
-        <xs:attribute name="title" type="xs:string" default="ms"></xs:attribute>
+        <xs:attribute name="title" default="ms">
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:enumeration value="ms" />
+                    <xs:enumeration value="mr" />
+                    <xs:enumeration value="mrs" />
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:attribute>
     </xs:complexType>
+
+
+    <xs:simpleType name="isbnType">
+        <xs:restriction base="xs:string">
+            <xs:minLength value="13" />
+            <xs:maxLength value="13" />
+        </xs:restriction>
+    </xs:simpleType>
+
 
     <xs:complexType name="priceType">
         <xs:simpleContent>
@@ -34,6 +51,15 @@
                 <xs:attribute name="currency" type="xs:string" default="npr"></xs:attribute>
             </xs:extension>
         </xs:simpleContent>
+        
     </xs:complexType>
+
+    <xs:simpleType name="priceTag">
+
+        <xs:restriction base="xs:integer">
+            <xs:maxInclusive value="1000"></xs:maxInclusive>
+        </xs:restriction>
+
+    </xs:simpleType>
 
 </xs:schema>
