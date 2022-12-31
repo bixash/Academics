@@ -12,7 +12,7 @@
                             <xs:element name="edition" type="xs:integer"></xs:element>
                             <xs:element name="price"></xs:element>
                         </xs:sequence>
-                        <xs:attribute name="id" type="xs:string" use="required"></xs:attribute>
+                        <xs:attribute name="id" type="xs:ID" use="required"></xs:attribute>
                     </xs:complexType>
                 </xs:element>
             </xs:sequence>
