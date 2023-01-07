@@ -1,9 +1,11 @@
-package multithreaded;
+package multithread;
 
-class NewThread extends Thread {
+class NewThread implements Runnable {
+    public Thread t;
+
     public NewThread(String name) {
-        super(name);
-        System.out.println("Child thread: " + this);
+        t = new Thread(this, name);
+        System.out.println("Child thread: " + t);
     }
 
     public void run() {
@@ -19,20 +21,18 @@ class NewThread extends Thread {
     }
 }
 
-public class Extends {
+public class Runnables {
     public static void main(String args[]) {
         Thread t = Thread.currentThread();
         System.out.println("Main thread: " + t);
         NewThread nt = new NewThread("child"); // You can also create multiple objects
-        nt.start();
+        nt.t.start();
         try {
             for (int i = 5; i > 0; i--) {
                 System.out.println("Main thread: " + i);
                 Thread.sleep(1000);
             }
-        }
-
-        catch (InterruptedException e) {
+        } catch (InterruptedException e) {
             System.out.println("Main thread interrupted.");
         }
         System.out.println("Main thread exiting.");
