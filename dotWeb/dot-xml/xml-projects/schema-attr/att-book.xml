@@ -12,7 +12,7 @@
         <publisher></publisher>
         <edition>1221</edition>
         
-        <price currency="npr">1000</price>
+        <price currency="usd">899</price>
     </book>
 
 
@@ -21,7 +21,7 @@
 <!-- 10.Write XML Schema and prepare file, which will display the Book
 information. It includes the following
  Title of the book
- Multiple Author Name with details(first,middle,last) name
+ Multiple Author Name with details(first, middle, last) name
  ISBN number (consists of 13 digit)
  Publisher name
  Edition
