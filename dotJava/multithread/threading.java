@@ -13,17 +13,18 @@ class NewThread extends Thread {
         try {
             for (int i = 0; i < 10; i++) {
 
-                if(i%1 == 0 ) {
+                if(i%1 != 0 ) {
                     System.out.println("Child thread " + i);
-                    Thread.sleep(500);
+                    
                 }
+                Thread.sleep(1000);
                 // System.out.println("Child thread " + i);
                
             }
         } catch (InterruptedException e) {
             System.out.println("Child interrupted");
         }
-        System.out.println("Child thread exiting");
+        // System.out.println("Child thread exiting");
     }
 }
 
@@ -47,7 +48,7 @@ public class threading {
         catch (InterruptedException e) {
             System.out.println("Main thread interrupted.");
         }
-        System.out.println("Main thread exiting.");
+        // System.out.println("Main thread exiting.");
     }
 }
 
