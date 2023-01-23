@@ -1,25 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<schools
-xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-xsi:noNamespaceSchemaLocation="school.xsd">>
-    <school id= "">
-        <staff id="">
-            <name ></name>
-            <title></title>
-            <category></category>
-            <address>
-                <street></street>
-                <suburb></suburb>
-                <postcode></postcode>
-            </address>
-        </staff>
-        <name></name>
-        <location></location>
-        <subjects id="">
-            <name></name>
-            <description></description>
-        </subjects>
-    </school>
+<School xsi:noNamespaceSchemaLocation="school.xsd" SchoolID="AAAAA"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 
-</schools>
+    <SchoolName>string</SchoolName>
+    <SchoolLocation>string</SchoolLocation>
+
+
+    <Staff StaffID="AAAAB">
+        <StaffName>string</StaffName>
+        <StaffTitle>string</StaffTitle>
+        <StaffCategory>Technical</StaffCategory>
+        <Address>
+            <Street>string</Street>
+            <Suburb>string</Suburb>
+            <Postcode>3056</Postcode>
+        </Address>
+    </Staff>
+
+
+    <Subject SubjCode="AAAAG">
+        <SubjName>string</SubjName>
+        <SubjDesc>string</SubjDesc>
+        <SubjCapacity>194</SubjCapacity>
+        <Staff-Ref ref="ID001" />
+    </Subject>
+
+
+</School>

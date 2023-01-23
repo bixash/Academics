@@ -52,7 +52,7 @@
                 </xsd:element>
                 <xsd:element name="Staff-Ref">
                     <xsd:complexType>
-                        <xsd:attribute name="ref" type="xsd:IDREF" use="required" />
+                        <xsd:attribute name="ref" type="xsd:string" use="required" />
                     </xsd:complexType>
                 </xsd:element>
             </xsd:sequence>
