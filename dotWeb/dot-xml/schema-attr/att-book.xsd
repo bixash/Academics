@@ -10,15 +10,7 @@
                             <xs:element name="isbn" type="isbnType"></xs:element>
                             <xs:element name="publisher" type="xs:string"></xs:element>
                             <xs:element name="edition" type="xs:integer"></xs:element>
-                            <xs:element name="price" >
-                                <xs:complexType>
-                                    <xs:simpleContent>
-                                        <xs:extension base="priceTag">
-                                            <xs:attribute name="currency" type="currencyType" default="npr"></xs:attribute>
-                                        </xs:extension>
-                                    </xs:simpleContent>
-                                </xs:complexType>
-                            </xs:element>
+                            <xs:element name="price" type="priceType"></xs:element>
                         </xs:sequence>
                         <xs:attribute name="id" type="xs:ID" use="required"></xs:attribute>
                     </xs:complexType>
@@ -26,11 +18,30 @@
             </xs:sequence>
         </xs:complexType>
     </xs:element>
+
+    <xs:complexType name="priceType">
+        <xs:simpleContent>
+            <xs:extension base="priceTag">
+                <xs:attribute name="currency" type="currencyType" default="npr"></xs:attribute>
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+
     <xs:simpleType name="currencyType">
         <xs:restriction base="xs:string">
-        <xs:pattern value="npr|usd"/>
+            <xs:pattern value="npr|usd"></xs:pattern>
         </xs:restriction>
-        </xs:simpleType>
+    </xs:simpleType>
+
+    <xs:simpleType name="priceTag">
+
+        <xs:restriction base="xs:integer">
+            <xs:maxInclusive value="1000"></xs:maxInclusive>
+            <xs:minInclusive value="0"></xs:minInclusive>
+        </xs:restriction>
+
+    </xs:simpleType>
+
     <xs:complexType name="nameType">
         <xs:sequence>
             <xs:element name="first" type="xs:string"></xs:element>
@@ -57,21 +68,14 @@
     </xs:simpleType>
 
 
-    <xs:complexType name="priceType">
-        <xs:simpleContent>
-            <xs:extension base="xs:integer">
-                <xs:attribute name="currency" type="xs:string" default="npr"></xs:attribute>
-            </xs:extension>
-        </xs:simpleContent>
-        
-    </xs:complexType>
-
-    <xs:simpleType name="priceTag">
-
-        <xs:restriction base="xs:integer">
-            <xs:maxInclusive value="1000"></xs:maxInclusive>
-        </xs:restriction>
-
-    </xs:simpleType>
-
 </xs:schema>
+
+<!-- <xs:complexType name="priceType">
+    <xs:simpleContent>
+        <xs:extension
+base="xs:integer">
+            <xs:attribute name="currency" type="xs:string"
+default="npr"></xs:attribute>
+        </xs:extension>
+    </xs:simpleContent>
+</xs:complexType> -->
