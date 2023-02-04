@@ -16,7 +16,7 @@ typedef struct bnode bnode;
 
 void insert(bnode*, int);
 struct bnode delete(bnode*, int);
-int search (bnode*, int);
+void search (bnode*, int);
 void preorder (bnode*);
 void postorder (bnode*);
 void inorder(bnode*);
@@ -52,6 +52,7 @@ void main () {
                 printf("\nEnter element you want to search: ");
                 scanf("%d", &elt);
                 search(root, elt);
+                
                 break;
 
             case 4: 
@@ -110,6 +111,7 @@ struct bnode *find_min(bnode *root)
     else
         return(find_min(root->left));
 }
+
 struct bnode delete(bnode* root, int elt) {
 
 
@@ -142,15 +144,15 @@ struct bnode delete(bnode* root, int elt) {
 
 }
 
-int search (bnode* root, int elt) {
+void search (bnode* root, int elt) {
     if (root == NULL )
-        return NULL;
+        printf("\nEmpty!");
     else if (elt == root->info)
-        return root->info;
+        printf("\nItem found! %d",root->info);
     else if (elt < root->info)
-        return search(root->left, elt);
+        search(root->left, elt);
     else if (elt > root->info )
-        return search(root->right, elt);
+        search(root->right, elt);
     else {
         printf("\nItem not found!");
     }
