@@ -166,7 +166,7 @@ void deleteEnd (node **head) {
    node *newNode, *last;
    int delt = -1;
 
-    if (head == NULL)
+    if (*head == NULL)
         printf("\nList is empty");
 
     else if ((*head)-> next == NULL)
