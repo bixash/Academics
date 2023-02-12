@@ -11,9 +11,9 @@ import java.awt.event.*;
 public class checkbox {
 	public static void main(String[] args) {
 		EventQueue.invokeLater(() -> {
-			JFrame f = new JFrame();
+			JFrame f = new JFrame("Checkbox");
 			f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-			f.setSize(500, 200);
+			f.setSize(190, 200);
 			SimplePanel p = new SimplePanel();
 			f.add(p);
 			f.setVisible(true);
@@ -43,7 +43,7 @@ class SimplePanel extends JPanel {
 		MyEventListener me = new MyEventListener();
 		b1.addActionListener(me);
 		// addMouseListener(me);
-		setLayout(new FlowLayout(FlowLayout.LEFT));
+		setLayout(new FlowLayout(FlowLayout.CENTER));
 		add(l1);
 		add(t1);
 

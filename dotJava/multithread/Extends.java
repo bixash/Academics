@@ -1,9 +1,12 @@
-package multithread;
+// package multithread;
 
 class NewThread extends Thread {
+    public Thread th;
     public NewThread(String name) {
-        super(name);
-        System.out.println("Child thread: " + this);
+        th = new Thread(this, name);
+        System.out.println("Child thread: " + th);
+        // super(name);
+        // System.out.println("Child thread: " + this);
     }
 
     public void run() {
