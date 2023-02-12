@@ -1,10 +1,13 @@
 // runs only when using code runner, java debugger doesn't work 
 
+
+// problem update:: because of naming conflict
+
 // import java.util.*;
-class NewThread implements Runnable {
+class oldThread implements Runnable {
     public Thread th;
 
-    public NewThread(String name) {
+    public oldThread(String name) {
         th = new Thread(this, name);
         System.out.println("Child thread: " + th);
     }
@@ -29,7 +32,7 @@ public class Runnables {
     public static void main(String args[]) {
         Thread t = Thread.currentThread();
         System.out.println("Main thread: " + t);
-        NewThread nt = new NewThread("child"); // You can also create multiple objects
+       oldThread nt = new oldThread("child"); // You can also create multiple objects
         // NewThread nt2 = new NewThread("sec child"); // You can also create multiple objects
         nt.th.start();
         // nt2.th.start();
