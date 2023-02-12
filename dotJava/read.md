@@ -1,5 +1,5 @@
 #Not Finished
  
-inherit.bank -- don't understood question logic
-multithread.runnables -- not working
+inherit.bank -- don't understood question logic  // chatgpt
+multithread.runnables -- not working  // problem update:: because of naming conflict
 multithread.threading -- can't print odd even
