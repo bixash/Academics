@@ -18,7 +18,7 @@ public class bytestream {
         try {
             
             in = new FileInputStream("bca.txt");
-            out = new FileOutputStream("check.txt");
+            out = new FileOutputStream("bba.txt");
             int c;
 
             while ((c=in.read())!= -1) {

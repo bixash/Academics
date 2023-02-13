@@ -55,13 +55,9 @@ class Account {
 }
 
 class Savings extends Account {
-   
-    // public Savings() {
-        
-    // }
 
     public Savings (int balance) {
-         this.balance=balance;
+        super(balance);
     }
     public double calculateInterest() {
 
@@ -84,12 +80,7 @@ class Savings extends Account {
 
 class Current extends Account {
 
-  
     int min_balance; 
-
-    // public Current () {
-        
-    // }
 
     public Current (int balance) {
         super(balance);

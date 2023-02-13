@@ -16,7 +16,7 @@ public class charstream {
         try {
             
             in = new FileReader("bca.txt");
-            out = new FileWriter("check.txt");
+            out = new FileWriter("bba.txt");
             int c;
 
             while ((c=in.read())!= -1) {
