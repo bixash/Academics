@@ -23,6 +23,7 @@ public class bytestream {
 
             while ((c=in.read())!= -1) {
                 out.write(c);
+                System.out.print(c);
             }
         } 
         finally {
