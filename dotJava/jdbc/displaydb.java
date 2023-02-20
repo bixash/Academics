@@ -23,15 +23,15 @@ public class displaydb {
             String sqlStmt = "SELECT * from users";
             stmt.executeUpdate(sqlStmt);
             ResultSet rs = stmt.executeQuery(sqlStmt); 
-            String name, username, password;
-            int id;
-            while(rs.next()) {
-                id = rs.getInt(1);
-                name = rs.getString(2);
-                username = rs.getString(3);
-                password = rs.getString(4);
+            // String name, username, password;
+            // int id;
+            // while(rs.next()) {
+            //     id = rs.getInt(1);
+            //     name = rs.getString(2);
+            //     username = rs.getString(3);
+            //     password = rs.getString(4);
 
-            }
+            // }
                 
             rs.close();
             stmt.close();
