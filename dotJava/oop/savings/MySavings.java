@@ -19,9 +19,7 @@ class Savings {
     private float balance;
     // private float interestAmount;
    
-    public Savings() {
 
-    }
     public Savings(float balance) {
         this.balance = balance;
     }
