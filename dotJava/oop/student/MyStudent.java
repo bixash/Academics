@@ -3,18 +3,13 @@
 // Use this class to find percentage and division of five students.
 
 package oop.student;
-import java.util.Scanner;
+
 class Student {
     public String name;
     public int roll;
     public int[]marks; 
 
     static int sub = 5;
-    Scanner sc = new Scanner(System.in);
-
-    public Student () {
-
-    }
 
     public Student (String name, int roll, int[]marks) {
 
