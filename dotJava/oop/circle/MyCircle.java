@@ -8,10 +8,6 @@ package oop.circle;
 class Circle {
     private float radius;
 
-    public Circle() {
-
-    }
-
     public Circle(float radius) {
         this.radius = radius;
     }

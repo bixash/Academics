@@ -9,20 +9,20 @@ public class insertdb {
 			JFrame f = new JFrame("Signup Form");
 			f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 			f.setSize(800, 400);
-			GuiPanel p = new GuiPanel();
+			DataPanel p = new DataPanel();
 			f.add(p);
 			f.setVisible(true);
 		});
 	}
 }
 
-class GuiPanel extends JPanel {
+class DataPanel extends JPanel {
 	private final JTextField txtName, txtEmail, txtPassword;
 	private final JLabel lblName, lblEmail, lblPassword; //lblSignup;
 	private final JCheckBox checkBox;
 	private final JButton btnRegister;
 
-	public GuiPanel() {
+	public DataPanel() {
 		txtName = new JTextField(8);
 	    txtEmail = new JTextField(8);
 		txtPassword = new JTextField(8);

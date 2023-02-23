@@ -52,11 +52,11 @@ public class displaydb {
     
 }
 
-class GuiPanel extends JPanel {
+class guiPanel extends JPanel {
 	private final JLabel txtName, txtEmail, txtPassword; 
 	private final JLabel lblName, lblEmail, lblPassword; //lblSignup;
 
-	public GuiPanel(String name, String username, String password) {
+	public guiPanel(String name, String username, String password) {
         
         // txtId = new Jlabel(id);
 		txtName = new JLabel(name);
